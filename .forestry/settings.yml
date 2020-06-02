@@ -1,0 +1,34 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: ''
+webhook_url: 
+sections:
+- type: directory
+  path: data/posts
+  label: Blog Posts
+  create: documents
+  match: "**/*.mdx"
+  new_doc_ext: mdx
+  templates:
+  - blog-post
+- type: directory
+  path: data/authors
+  label: Authors
+  create: all
+  match: "**/*.json"
+  new_doc_ext: json
+  templates:
+  - author
+upload_dir: data/images
+public_path: data/images
+front_matter_path: ''
+use_front_matter_path: 
+file_template: ":filename:"
+build:
+  preview_output_directory: public
+  install_dependencies_command: yarn install
+  preview_docker_image: node:10
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: gatsby develop -p 8080 -H 0.0.0.0

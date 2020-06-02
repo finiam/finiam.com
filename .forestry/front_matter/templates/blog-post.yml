@@ -1,0 +1,42 @@
+---
+label: Blog Post
+hide_body: false
+display_field: path
+fields:
+- type: text
+  name: path
+  label: path
+  config:
+    required: true
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+- type: datetime
+  name: date
+  label: date
+  config:
+    required: true
+- name: author
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: pages
+      section: authors
+      file:
+      path:
+  label: author
+- type: text
+  name: description
+  label: description
+  config:
+    required: true
+- type: file
+  name: featuredImage
+  label: featuredImage
+pages:
+- data/posts/hello-world.mdx
