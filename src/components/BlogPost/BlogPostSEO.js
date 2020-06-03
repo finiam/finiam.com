@@ -1,17 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import { Helmet } from "react-helmet";
+import SEO from "root/components/SEO";
 
-import Layout from "root/components/Layout";
-import Navbar from "root/components/Navbar";
+import BlogPostProps from "./BlogPostProps";
 
-function BlogPost({ pageContext }) {
-  const { frontmatter, body } = pageContext.blogPost;
+function BlogPostSEO({ frontmatter }) {
   const author = frontmatter.author.childAuthorsJson;
 
   return (
     <>
+      <SEO title={frontmatter.title} description={frontmatter.description} />
       <Helmet>
         <meta name="author" property="og:author" content={author.name} />
         <meta
@@ -73,49 +71,10 @@ function BlogPost({ pageContext }) {
           content={`https://finiam.com${frontmatter.path}`}
         />
       </Helmet>
-
-      <Navbar theme="primary" />
-
-      <Layout title={frontmatter.title} description={frontmatter.description}>
-        <article>
-          <div>
-            <p>
-              {author.name} | {frontmatter.date}
-            </p>
-          </div>
-
-          <br />
-
-          <h1>{frontmatter.title}</h1>
-
-          <br />
-
-          <MDXRenderer>{body}</MDXRenderer>
-        </article>
-      </Layout>
     </>
   );
 }
 
-BlogPost.propTypes = {
-  pageContext: PropTypes.shape({
-    blogPost: PropTypes.shape({
-      frontmatter: PropTypes.shape({
-        path: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-        featuredImage: PropTypes.object.isRequired,
-        author: PropTypes.shape({
-          childAuthorsJson: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            twitter: PropTypes.string,
-          }).isRequired,
-        }).isRequired,
-      }).isRequired,
-      body: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
-};
+BlogPostSEO.propTypes = BlogPostProps.frontmatter;
 
-export default BlogPost;
+export default BlogPostSEO;
