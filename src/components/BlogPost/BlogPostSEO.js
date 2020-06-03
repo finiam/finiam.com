@@ -1,10 +1,12 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import SEO from "root/components/SEO";
+import useSiteMetadata from "root/hooks/useSiteMetadata";
 
 import BlogPostProps from "./BlogPostProps";
 
 function BlogPostSEO({ frontmatter }) {
+  const { siteUrl, twitter } = useSiteMetadata();
   const author = frontmatter.author.childAuthorsJson;
 
   return (
@@ -19,20 +21,15 @@ function BlogPostSEO({ frontmatter }) {
         />
         <meta
           name="image"
-          property="og:image"
-          content={`http://finiam.com${frontmatter.featuredImage.image.fluid.src}`}
-        />
-        <meta
-          name="image"
           property="og:image:secure_url"
-          content={`https://finiam.com${frontmatter.featuredImage.image.fluid.src}`}
+          content={`${siteUrl}/${frontmatter.featuredImage.image.fluid.src}`}
         />
         <meta name="title" property="og:title" content={frontmatter.title} />
         <meta name="type" property="og:type" content="article" />
         <meta
           name="url"
           property="og:url"
-          content={`https://finiam.com${frontmatter.path}`}
+          content={`${siteUrl}/${frontmatter.path}`}
         />
         <meta
           name="twitter:card"
@@ -52,14 +49,14 @@ function BlogPostSEO({ frontmatter }) {
         <meta
           name="twitter:image"
           property="twitter:image"
-          content={`https://finiam.com${frontmatter.featuredImage.image.fluid.src}`}
+          content={`${siteUrl}/${frontmatter.featuredImage.image.fluid.src}`}
         />
         <meta
           name="twitter:image:alt"
           property="twitter:image:alt"
           content={`${frontmatter.title} preview`}
         />
-        <meta name="twitter:site" property="twitter:site" content="@Finiam" />
+        <meta name="twitter:site" property="twitter:site" content={twitter} />
         <meta
           name="twitter:title"
           property="twitter:title"
@@ -68,7 +65,7 @@ function BlogPostSEO({ frontmatter }) {
         <meta
           name="twitter:url"
           property="twitter:url"
-          content={`https://finiam.com${frontmatter.path}`}
+          content={`${siteUrl}/${frontmatter.path}`}
         />
       </Helmet>
     </>
