@@ -1,11 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "@emotion/styled";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
 
 import BlogPostProps from "./BlogPostProps";
 import BlogPostSEO from "./BlogPostSEO";
+
+const Article = styled.article`
+  img {
+    max-width: 100%;
+  }
+`;
 
 function BlogPost({ pageContext }) {
   const { frontmatter, body } = pageContext.blogPost;
@@ -18,7 +25,7 @@ function BlogPost({ pageContext }) {
       <Navbar />
 
       <Layout>
-        <article>
+        <Article>
           <div>
             <p>
               {author.name} | {frontmatter.date}
@@ -32,7 +39,7 @@ function BlogPost({ pageContext }) {
           <br />
 
           <MDXRenderer>{body}</MDXRenderer>
-        </article>
+        </Article>
       </Layout>
     </>
   );

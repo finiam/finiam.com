@@ -30,6 +30,7 @@ const plugins = [
         },
         "gatsby-remark-relative-images",
         "gatsby-remark-unwrap-images",
+        "gatsby-remark-copy-relative-linked-files",
         {
           resolve: `gatsby-remark-images`,
           options: {
