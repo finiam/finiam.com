@@ -8,6 +8,8 @@ import Navbar from "root/components/Navbar";
 import BlogPostProps from "./BlogPostProps";
 import BlogPostSEO from "./BlogPostSEO";
 
+import "prismjs/themes/prism-solarizedlight.css";
+
 const Article = styled.article`
   img {
     max-width: 100%;

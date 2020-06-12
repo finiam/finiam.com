@@ -41,6 +41,7 @@ const plugins = [
             showCaptions: true,
           },
         },
+        "gatsby-remark-prismjs",
       ],
     },
   },
