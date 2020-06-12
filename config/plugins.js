@@ -30,13 +30,19 @@ const plugins = [
         },
         "gatsby-remark-relative-images",
         "gatsby-remark-unwrap-images",
-        "gatsby-remark-copy-relative-linked-files",
+        {
+          resolve: "gatsby-remark-copy-relative-linked-files",
+          options: {
+            ignoreFileExtensions: [".md", ".jpg", ".webp", ".png"],
+          },
+        },
         {
           resolve: `gatsby-remark-images`,
           options: {
             maxWidth: 824,
             linkImagesToOriginal: false,
-            withWebp: true,
+            backgroundColor: "transparent",
+            withWebp: false,
             quality: 75,
             showCaptions: true,
           },
