@@ -1,6 +1,8 @@
 # finiam.com
 
-Finiam's website. Made with Gatsby.
+Finiam's website. Made with Gatsby and Preact.
+
+Disclaimer: This is using `gatsby-plugin-preact` so be aware of that when importing external React libraries that might not work with Preact.
 
 ## Scripts
 * `yarn dev` to run in development mode.

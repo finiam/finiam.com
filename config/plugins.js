@@ -1,6 +1,7 @@
 const ROOT_PATH = process.cwd();
 
 const plugins = [
+  "gatsby-plugin-preact",
   "gatsby-plugin-react-helmet",
   {
     resolve: "gatsby-source-filesystem",
