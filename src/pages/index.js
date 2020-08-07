@@ -7,7 +7,7 @@ import WidthLimiter from "root/components/WidthLimiter";
 
 const IndexPage = () => (
   <div>
-    <SEO title="Home Page" />
+    <SEO title="Finiam" />
     <Navbar />
 
     <WidthLimiter>
