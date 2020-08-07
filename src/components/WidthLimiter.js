@@ -1,18 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
+import { columnsToPx } from "../styleutils/settings";
 
 const Root = styled.div`
-  max-width: 40rem;
+  max-width: ${columnsToPx(12)};
   margin: 2rem auto;
 `;
 
-function Layout({ children }) {
+function WidthLimiter({ children }) {
   return <Root>{children}</Root>;
 }
 
-Layout.propTypes = {
+WidthLimiter.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default WidthLimiter;
