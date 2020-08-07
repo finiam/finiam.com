@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { columnsToPx } from "../styleutils/settings";
 
 const Root = styled.div`
-  max-width: ${columnsToPx(12)};
+  max-width: ${columnsToPx(16)};
   margin: 2rem auto;
 `;
 
