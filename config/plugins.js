@@ -1,7 +1,6 @@
 const ROOT_PATH = process.cwd();
 
 const plugins = [
-  "gatsby-plugin-preact",
   "gatsby-plugin-react-helmet",
   {
     resolve: "gatsby-source-filesystem",
@@ -52,7 +51,13 @@ const plugins = [
       ],
     },
   },
-  "gatsby-plugin-emotion",
+  {
+    resolve: "gatsby-plugin-emotion",
+    options: {
+      autoLabel: process.env.NODE_ENV !== "production",
+      labelFormat: "[filename]-[local]",
+    },
+  },
   {
     resolve: "gatsby-source-filesystem",
     options: {

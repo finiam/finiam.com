@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
 import styled from "@emotion/styled";
 
-import Layout from "root/components/Layout";
+import WidthLimiter from "root/components/WidthLimiter";
 import Navbar from "root/components/Navbar";
 
 export const query = graphql`
@@ -56,7 +56,7 @@ function Blog({
     <>
       <Navbar />
 
-      <Layout>
+      <WidthLimiter>
         {edges.map(({ node }) => {
           const author = node.frontmatter.author.childAuthorsJson;
           const { title, path } = node.frontmatter;
@@ -71,7 +71,7 @@ function Blog({
             </Preview>
           );
         })}
-      </Layout>
+      </WidthLimiter>
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
-import Layout from "root/components/Layout";
+import WidthLimiter from "root/components/WidthLimiter";
 import Navbar from "root/components/Navbar";
 
 import BlogPostProps from "./BlogPostProps";
@@ -26,7 +26,7 @@ function BlogPost({ pageContext }) {
 
       <Navbar />
 
-      <Layout>
+      <WidthLimiter>
         <Article>
           <div>
             <p>
@@ -42,7 +42,7 @@ function BlogPost({ pageContext }) {
 
           <MDXRenderer>{body}</MDXRenderer>
         </Article>
-      </Layout>
+      </WidthLimiter>
     </>
   );
 }

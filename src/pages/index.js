@@ -3,20 +3,20 @@ import Link from "gatsby-link";
 
 import SEO from "root/components/SEO";
 import Navbar from "root/components/Navbar";
-import Layout from "root/components/Layout";
+import WidthLimiter from "root/components/WidthLimiter";
 
 const IndexPage = () => (
   <div>
     <SEO title="Home Page" />
     <Navbar />
 
-    <Layout>
+    <WidthLimiter>
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <br />
       <Link to="/blog">Check the blog</Link>
-    </Layout>
+    </WidthLimiter>
   </div>
 );
 
