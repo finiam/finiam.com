@@ -1,6 +1,18 @@
 const ROOT_PATH = process.cwd();
 
 const plugins = [
+  {
+    resolve: "gatsby-plugin-manifest",
+    options: {
+      name: "Finiam",
+      short_name: "Finiam",
+      start_url: "/",
+      background_color: "#4D00E5",
+      theme_color: "#4D00E5",
+      display: "browser",
+      icon: "src/assets/favicon.svg",
+    },
+  },
   "gatsby-plugin-react-helmet",
   {
     resolve: "gatsby-source-filesystem",
