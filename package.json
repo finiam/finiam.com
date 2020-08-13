@@ -11,9 +11,9 @@
     "url": "https://github.com/finiam/finiam.com"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "GATSBY_HOT_LOADER=fast-refresh gatsby develop",
     "build": "gatsby build",
-    "lint": "eslint src",
+    "lint": "eslint src config",
     "lint-styles": "stylelint \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.js\""
   },
   "dependencies": {
