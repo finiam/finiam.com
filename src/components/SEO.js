@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import useSiteMetadata from "../hooks/useSiteMetadata";
+import favicon from "../assets/favicon.svg";
 
 function SEO({ title, description, keywords }) {
   const {
@@ -22,6 +23,7 @@ function SEO({ title, description, keywords }) {
         content={description || siteDescription}
       />
       <meta property="og:image" content="logo.png" />
+      <link rel="icon" href={favicon} type="image/svg+xml" />
     </Helmet>
   );
 }

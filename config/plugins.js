@@ -11,6 +11,7 @@ const plugins = [
       theme_color: "#4D00E5",
       display: "browser",
       icon: "src/assets/favicon.svg",
+      include_favicon: false,
     },
   },
   "gatsby-plugin-react-helmet",
