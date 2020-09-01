@@ -25,8 +25,22 @@ const plugins = [
   {
     resolve: "gatsby-source-filesystem",
     options: {
-      path: `${ROOT_PATH}/data`,
-      name: "cms",
+      path: `${ROOT_PATH}/data/media`,
+      name: "cms_media",
+    },
+  },
+  {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      path: `${ROOT_PATH}/data/authors`,
+      name: "cms_authors",
+    },
+  },
+  {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      path: `${ROOT_PATH}/data/posts`,
+      name: "cms_posts",
     },
   },
   "gatsby-transformer-json",
@@ -41,7 +55,12 @@ const plugins = [
             rel: "noopener",
           },
         },
-        "gatsby-remark-relative-images",
+        {
+          resolve: `gatsby-remark-relative-images`,
+          options: {
+            staticFolderName: ".",
+          },
+        },
         "gatsby-remark-unwrap-images",
         {
           resolve: "gatsby-remark-copy-relative-linked-files",
