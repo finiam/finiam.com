@@ -23,6 +23,7 @@ function getSide({ direction }) {
 const Flexbox = styled.div`
   display: ${(props) => (props.inline ? "inline-flex" : "flex")};
   flex-direction: ${(props) => props.direction};
+  justify-content: ${(props) => props.justifyContent};
 
   & > * + * {
     ${getSide}: ${(props) => props.gap}
@@ -36,10 +37,12 @@ Flexbox.propTypes = {
     "column",
     "column-reverse",
   ]),
+  justifyContent: PropTypes.string.isRequired,
 };
 
 Flexbox.defaultProps = {
   direction: "row",
+  justifyContent: "initial",
 };
 
 export default Flexbox;

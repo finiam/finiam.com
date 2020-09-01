@@ -14,6 +14,4 @@ module.exports = async () => {
   if (typeof window.requestAnimationFrame === "undefined") {
     await import("raf/polyfill");
   }
-
-  await import("babel-polyfill");
 };
