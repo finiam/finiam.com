@@ -26,21 +26,21 @@ const plugins = [
     resolve: "gatsby-source-filesystem",
     options: {
       path: `${ROOT_PATH}/data/media`,
-      name: "posts_media",
+      name: "cms_media",
     },
   },
   {
     resolve: "gatsby-source-filesystem",
     options: {
       path: `${ROOT_PATH}/data/authors`,
-      name: "authors",
+      name: "cms_authors",
     },
   },
   {
     resolve: "gatsby-source-filesystem",
     options: {
       path: `${ROOT_PATH}/data/posts`,
-      name: "posts",
+      name: "cms_posts",
     },
   },
   "gatsby-transformer-json",
