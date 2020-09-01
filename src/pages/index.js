@@ -4,6 +4,7 @@ import Link from "gatsby-link";
 import SEO from "root/components/SEO";
 import Navbar from "root/components/Navbar";
 import WidthLimiter from "root/components/WidthLimiter";
+import Footer from "root/components/Footer";
 
 const IndexPage = () => (
   <div>
@@ -17,6 +18,8 @@ const IndexPage = () => (
       <br />
       <Link to="/blog">Check the blog</Link>
     </WidthLimiter>
+
+    <Footer />
   </div>
 );
 

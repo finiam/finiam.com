@@ -31,6 +31,8 @@ const sizes = {
 };
 
 const InnerText = styled.div`
+  color: ${(props) => props.color};
+
   font-family: "studiofeixen";
   font-size: ${(props) => props.sizeObj.fontSize}px;
   line-height: ${(props) => props.sizeObj.lineHeight}px;
@@ -48,11 +50,11 @@ const InnerText = styled.div`
   }
 `;
 
-function Text({ size, children }) {
+export default function Text({ size, children, ...props }) {
   const sizeObj = sizes[size] || sizes.base;
 
   return (
-    <InnerText as={sizeObj.element} sizeObj={sizeObj}>
+    <InnerText as={sizeObj.element} sizeObj={sizeObj} {...props}>
       {children}
     </InnerText>
   );
@@ -60,15 +62,15 @@ function Text({ size, children }) {
 
 Text.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
+  color: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 Text.defaultProps = {
-  size: "block",
+  size: "base",
+  color: "white",
 };
 
 export const Edgy = styled.span`
   font-family: "studiofeixen-edgy";
 `;
-
-export default Text;
