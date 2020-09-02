@@ -3,10 +3,9 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import Img from "gatsby-image/withIEPolyfill";
 import { useStaticQuery, graphql } from "gatsby";
-import { columnsToPx } from "root/styleutils/settings";
+import { columnsToPx, spacing } from "root/styleutils/settings";
 import ElasticF from "./ElasticF";
-import Text, { Edgy } from "./Text";
-import { spacing } from "../styleutils/settings";
+import Text from "./Text";
 
 export const query = graphql`
   query {
