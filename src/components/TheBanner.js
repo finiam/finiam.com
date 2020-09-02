@@ -5,7 +5,8 @@ import Img from "gatsby-image/withIEPolyfill";
 import { useStaticQuery, graphql } from "gatsby";
 import { columnsToPx } from "root/styleutils/settings";
 import ElasticF from "./ElasticF";
-import Text from "./Text";
+import Text, { Edgy } from "./Text";
+import { spacing } from "../styleutils/settings";
 
 export const query = graphql`
   query {
@@ -24,11 +25,13 @@ const Root = styled.div`
 
   display: flex;
   flex-direction: column;
+  padding-top: ${spacing(20)};
+  padding-bottom: ${spacing(35)};
 `;
 
 const Copy = styled.div`
-  max-width: ${columnsToPx(10)};
-  margin-bottom: 50px;
+  max-width: ${columnsToPx(12)};
+  margin-bottom: ${spacing(40)};
 
   font-size: 52px;
   font-weight: 500;
@@ -36,15 +39,14 @@ const Copy = styled.div`
 `;
 
 const ElasticFContainer = styled.div`
-  width: 80%;
-  margin-top: auto;
-  margin-bottom: 5rem;
+  width: ${columnsToPx(15)};
+
   margin-left: auto;
 `;
 
 const JumpingDude = styled(motion.div)`
   position: absolute !important;
-  right: 10%;
+  right: 5%;
   bottom: 12%;
 
   width: 300px;
@@ -60,8 +62,13 @@ export default function TheBanner() {
   return (
     <Root>
       <Copy>
-        <Text size="h1">
-          We are finiam. <br />
+        <Text size="h1" color="#B294EF;">
+          We are finiam.
+        </Text>
+        <Text
+          size="h1"
+          aria-label="We are finiam. Improving people's lives by untangling the financial world."
+        >
           Improving people&apos;s lives by untangling the financial world.
         </Text>
       </Copy>

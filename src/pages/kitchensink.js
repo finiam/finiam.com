@@ -5,6 +5,7 @@ import WidthLimiter from "root/components/WidthLimiter";
 import Flexbox from "root/components/Flexbox";
 import { columnsToPx, spacing } from "root/styleutils/settings";
 import Text, { Edgy } from "root/components/Text";
+import Footer from "root/components/Footer";
 
 const Root = styled.div`
   padding: 2rem;
@@ -112,6 +113,8 @@ export default function KitchenSink() {
           </Text>
         </Flexbox>
       </WidthLimiter>
+
+      <Footer />
     </Root>
   );
 }

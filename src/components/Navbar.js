@@ -1,11 +1,12 @@
 import React from "react";
 import GatsbyLink from "gatsby-link";
 import styled from "@emotion/styled";
+import colors from "root/styleutils/colors";
 
 const Root = styled.nav`
   padding: 2rem;
 
-  background-color: black;
+  background-color: ${colors.brand};
 `;
 
 const LinkList = styled.ul``;

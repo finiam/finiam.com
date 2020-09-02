@@ -1,6 +1,19 @@
 const ROOT_PATH = process.cwd();
 
 const plugins = [
+  {
+    resolve: "gatsby-plugin-manifest",
+    options: {
+      name: "Finiam",
+      short_name: "Finiam",
+      start_url: "/",
+      background_color: "#4D00E5",
+      theme_color: "#4D00E5",
+      display: "browser",
+      icon: "src/assets/favicon.svg",
+      include_favicon: false,
+    },
+  },
   "gatsby-plugin-react-helmet",
   {
     resolve: "gatsby-source-filesystem",
@@ -12,8 +25,22 @@ const plugins = [
   {
     resolve: "gatsby-source-filesystem",
     options: {
-      path: `${ROOT_PATH}/data`,
-      name: "cms",
+      path: `${ROOT_PATH}/data/media`,
+      name: "cms_media",
+    },
+  },
+  {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      path: `${ROOT_PATH}/data/authors`,
+      name: "cms_authors",
+    },
+  },
+  {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      path: `${ROOT_PATH}/data/posts`,
+      name: "cms_posts",
     },
   },
   "gatsby-transformer-json",
@@ -28,7 +55,12 @@ const plugins = [
             rel: "noopener",
           },
         },
-        "gatsby-remark-relative-images",
+        {
+          resolve: `gatsby-remark-relative-images`,
+          options: {
+            staticFolderName: ".",
+          },
+        },
         "gatsby-remark-unwrap-images",
         {
           resolve: "gatsby-remark-copy-relative-linked-files",
@@ -74,6 +106,16 @@ const plugins = [
     },
   },
   "gatsby-plugin-sitemap",
+  {
+    resolve: `gatsby-plugin-subfont`,
+    options: {
+      dynamic: true,
+      silent: false,
+      fallback: false,
+      inlineFonts: true,
+      fontDisplay: "block",
+    },
+  },
 ];
 
 module.exports = plugins;

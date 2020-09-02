@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import SEO from "root/components/SEO";
 import TheBanner from "root/components/TheBanner";
 import WidthLimiter from "root/components/WidthLimiter";
+import Footer from "root/components/Footer";
 
 const Root = styled.div`
   display: flex;
@@ -23,6 +24,8 @@ const IndexPage = () => {
 
         <Link to="/blog">Check the blog</Link>
       </WidthLimiter>
+
+      <Footer />
     </Root>
   );
 };
