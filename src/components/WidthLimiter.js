@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
-import { columnsToPx } from "../styleutils/settings";
+import styled from "styled-components";
+
+import { columnsToPx } from "root/styleutils/settings";
 
 const Root = styled.div`
   width: 100%;

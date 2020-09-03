@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
+
 import colors from "root/styleutils/colors";
 import { spacing, COLUMN_SIZE } from "root/styleutils/settings";
 import WidthLimiter from "./WidthLimiter";

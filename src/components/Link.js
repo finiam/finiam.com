@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import GatsbyLink from "gatsby-link";
 
 const Root = styled(GatsbyLink)`
@@ -21,7 +21,7 @@ export default function Link({ href, to, underline, children, ...props }) {
   if (href) {
     Component = Component.withComponent("a");
 
-    return <Component {...{ ...props, href, underline }}>{children}</Component>;
+    return <Component {...{ ...props, href }}>{children}</Component>;
   }
 
   return <Component {...{ ...props, to, underline }}>{children}</Component>;

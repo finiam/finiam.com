@@ -83,13 +83,7 @@ const plugins = [
       ],
     },
   },
-  {
-    resolve: "gatsby-plugin-emotion",
-    options: {
-      autoLabel: process.env.NODE_ENV !== "production",
-      labelFormat: "[filename]-[local]",
-    },
-  },
+  "gatsby-plugin-styled-components",
   {
     resolve: "gatsby-source-filesystem",
     options: {
@@ -109,7 +103,6 @@ const plugins = [
   {
     resolve: `gatsby-plugin-subfont`,
     options: {
-      dynamic: true,
       silent: false,
       fallback: false,
       inlineFonts: true,

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "gatsby-link";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 import SEO from "root/components/SEO";
 import TheBanner from "root/components/TheBanner";
