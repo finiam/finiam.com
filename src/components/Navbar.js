@@ -1,6 +1,7 @@
 import React from "react";
 import GatsbyLink from "gatsby-link";
-import styled from "@emotion/styled";
+import styled from "styled-components";
+
 import colors from "root/styleutils/colors";
 
 const Root = styled.nav`

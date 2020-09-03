@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
+
 import WidthLimiter from "root/components/WidthLimiter";
 import Navbar from "root/components/Navbar";
-
 import BlogPostProps from "./BlogPostProps";
 import BlogPostSEO from "./BlogPostSEO";
 

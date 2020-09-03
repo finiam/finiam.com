@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 import WidthLimiter from "root/components/WidthLimiter";
 import Navbar from "root/components/Navbar";

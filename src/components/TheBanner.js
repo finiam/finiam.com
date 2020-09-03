@@ -1,8 +1,9 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 import Img from "gatsby-image/withIEPolyfill";
 import { useStaticQuery, graphql } from "gatsby";
+
 import { columnsToPx, spacing } from "root/styleutils/settings";
 import ElasticF from "./ElasticF";
 import Text from "./Text";
