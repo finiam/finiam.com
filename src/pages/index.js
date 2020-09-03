@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "gatsby-link";
 import styled from "styled-components";
 
 import SEO from "root/components/SEO";
 import TheBanner from "root/components/TheBanner";
 import WidthLimiter from "root/components/WidthLimiter";
 import Footer from "root/components/Footer";
+import Navbar from "../components/Navbar";
 
 const Root = styled.div`
   display: flex;
@@ -19,10 +19,10 @@ const IndexPage = () => {
     <Root>
       <SEO title="Home Page" />
 
+      <Navbar />
+
       <WidthLimiter>
         <TheBanner />
-
-        <Link to="/blog">Check the blog</Link>
       </WidthLimiter>
 
       <Footer />

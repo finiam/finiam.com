@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Img from "gatsby-image/withIEPolyfill";
@@ -13,7 +13,7 @@ export const query = graphql`
     file(relativePath: { eq: "jumping-dude.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -25,7 +25,7 @@ const Root = styled.div`
 
   display: flex;
   flex-direction: column;
-  padding-top: ${spacing(20)};
+  padding-top: ${spacing(22)};
   padding-bottom: ${spacing(35)};
 `;
 
@@ -42,6 +42,8 @@ const ElasticFContainer = styled.div`
   width: ${columnsToPx(15)};
 
   margin-left: auto;
+
+  transform: translateX(5%);
 `;
 
 const JumpingDude = styled(motion.div)`
@@ -51,13 +53,60 @@ const JumpingDude = styled(motion.div)`
 
   width: 300px;
   height: auto;
+
+  opacity: 0;
+`;
+
+const JumpindDudeWithoutMotion = styled.div`
+  position: absolute !important;
+  right: 5%;
+  bottom: 12%;
+
+  width: 300px;
+  height: auto;
+
+  transform: translate(-5%, -10%);
 `;
 
 const TRANSITION_DURATION = 1.5;
 
 export default function TheBanner() {
+  const shouldAnimate =
+    typeof window !== "undefined" &&
+    window.sessionStorage.getItem("shouldAnimate") !== "false";
   const data = useStaticQuery(query);
   const jumpingDude = data.file.childImageSharp.fluid;
+
+  useEffect(() => {
+    setTimeout(
+      () => window.sessionStorage.setItem("shouldAnimate", "false"),
+      TRANSITION_DURATION,
+    );
+  }, []);
+
+  function renderDude() {
+    if (!shouldAnimate) {
+      return (
+        <JumpindDudeWithoutMotion>
+          <Img fluid={jumpingDude} fadeIn={false} />
+        </JumpindDudeWithoutMotion>
+      );
+    }
+
+    return (
+      <JumpingDude
+        initial={{ opacity: 0, x: 0 }}
+        animate={{ opacity: 1, x: "-5%", y: "-10%" }}
+        transition={{
+          delay: TRANSITION_DURATION + 0.1,
+          duration: 0.5,
+          ease: "linear",
+        }}
+      >
+        <Img fluid={jumpingDude} />
+      </JumpingDude>
+    );
+  }
 
   return (
     <Root>
@@ -74,18 +123,12 @@ export default function TheBanner() {
       </Copy>
 
       <ElasticFContainer initial="start" animate="end">
-        <JumpingDude
-          initial={{ opacity: 0, x: 0 }}
-          animate={{ opacity: 1, x: "-5%", y: "-10%" }}
-          transition={{
-            delay: TRANSITION_DURATION + 0.1,
-            duration: 0.5,
-            ease: "linear",
-          }}
-        >
-          <Img fluid={jumpingDude} />
-        </JumpingDude>
-        <ElasticF transitionDuration={TRANSITION_DURATION} />
+        {renderDude()}
+
+        <ElasticF
+          transitionDuration={TRANSITION_DURATION}
+          shouldAnimate={shouldAnimate}
+        />
       </ElasticFContainer>
     </Root>
   );

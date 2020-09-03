@@ -19,12 +19,20 @@ export default function Link({ href, to, underline, children, ...props }) {
   let Component = Root;
 
   if (href) {
-    Component = Component.withComponent("a");
+    Component = Root.withComponent("a");
 
-    return <Component {...{ ...props, href }}>{children}</Component>;
+    return (
+      <Component {...{ ...props, href, underline: underline ? 1 : 0 }}>
+        {children}
+      </Component>
+    );
   }
 
-  return <Component {...{ ...props, to, underline }}>{children}</Component>;
+  return (
+    <Component {...{ ...props, to, underline: underline ? 1 : 0 }}>
+      {children}
+    </Component>
+  );
 }
 
 Link.propTypes = {
@@ -35,7 +43,7 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  to: "/",
-  href: "/",
+  to: null,
+  href: null,
   underline: true,
 };
