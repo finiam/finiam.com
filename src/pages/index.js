@@ -1,26 +1,33 @@
 import React from "react";
 import Link from "gatsby-link";
+import styled from "@emotion/styled";
 
 import SEO from "root/components/SEO";
-import Navbar from "root/components/Navbar";
+import TheBanner from "root/components/TheBanner";
 import WidthLimiter from "root/components/WidthLimiter";
 import Footer from "root/components/Footer";
 
-const IndexPage = () => (
-  <div>
-    <SEO title="Finiam" />
-    <Navbar />
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
 
-    <WidthLimiter>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <br />
-      <Link to="/blog">Check the blog</Link>
-    </WidthLimiter>
+  background-color: #4d00e5;
+`;
 
-    <Footer />
-  </div>
-);
+const IndexPage = () => {
+  return (
+    <Root>
+      <SEO title="Home Page" />
+
+      <WidthLimiter>
+        <TheBanner />
+
+        <Link to="/blog">Check the blog</Link>
+      </WidthLimiter>
+
+      <Footer />
+    </Root>
+  );
+};
 
 export default IndexPage;

@@ -106,6 +106,16 @@ const plugins = [
     },
   },
   "gatsby-plugin-sitemap",
+  {
+    resolve: `gatsby-plugin-subfont`,
+    options: {
+      dynamic: true,
+      silent: false,
+      fallback: false,
+      inlineFonts: true,
+      fontDisplay: "block",
+    },
+  },
 ];
 
 module.exports = plugins;
