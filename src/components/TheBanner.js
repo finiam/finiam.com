@@ -13,7 +13,7 @@ export const query = graphql`
     file(relativePath: { eq: "jumping-dude.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
@@ -53,8 +53,6 @@ const JumpingDude = styled(motion.div)`
 
   width: 300px;
   height: auto;
-
-  opacity: 0;
 `;
 
 const JumpindDudeWithoutMotion = styled.div`
@@ -88,7 +86,7 @@ export default function TheBanner() {
     if (!shouldAnimate) {
       return (
         <JumpindDudeWithoutMotion>
-          <Img fluid={jumpingDude} fadeIn={false} />
+          <Img fluid={jumpingDude} />
         </JumpindDudeWithoutMotion>
       );
     }
@@ -123,12 +121,17 @@ export default function TheBanner() {
       </Copy>
 
       <ElasticFContainer initial="start" animate="end">
-        {renderDude()}
+        <motion.div
+          initial={{ opacity: shouldAnimate ? 1 : 0 }}
+          animate={{ opacity: 1 }}
+        >
+          {renderDude()}
 
-        <ElasticF
-          transitionDuration={TRANSITION_DURATION}
-          shouldAnimate={shouldAnimate}
-        />
+          <ElasticF
+            transitionDuration={TRANSITION_DURATION}
+            shouldAnimate={shouldAnimate}
+          />
+        </motion.div>
       </ElasticFContainer>
     </Root>
   );
