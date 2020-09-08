@@ -28,7 +28,7 @@ const IndexPage = () => {
       <WidthLimiter>
         <TheBanner />
       </WidthLimiter>
-    
+
       <Purple>
         <WidthLimiter>
           <TheBanner />
