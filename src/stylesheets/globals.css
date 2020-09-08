@@ -10,6 +10,13 @@
 }
 
 @font-face {
+  font-family: "studiofeixen";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/StudioFeixenSans-Regular.otf");
+}
+
+@font-face {
   font-family: "studiofeixen-edgy";
   font-style: normal;
   font-weight: normal;

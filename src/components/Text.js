@@ -35,6 +35,7 @@ const InnerText = styled.div`
 
   font-family: "studiofeixen";
   font-size: ${(props) => props.sizeObj.fontSize}px;
+  font-weight: ${(props) => props.weight};
   line-height: ${(props) => props.sizeObj.lineHeight}px;
 
   u {
@@ -63,12 +64,14 @@ export default function Text({ size, children, ...props }) {
 Text.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.string,
+  weight: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 Text.defaultProps = {
   size: "base",
   color: "white",
+  weight: "normal",
 };
 
 export const Edgy = styled.span`

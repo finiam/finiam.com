@@ -109,6 +109,14 @@ const plugins = [
       fontDisplay: "block",
     },
   },
+  {
+    resolve: "gatsby-plugin-react-svg",
+    options: {
+      rule: {
+        include: /\.inline\.svg$/,
+      },
+    },
+  },
 ];
 
 module.exports = plugins;
