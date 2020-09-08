@@ -1,17 +1,21 @@
 import React from "react";
-import Link from "gatsby-link";
 import styled from "styled-components";
 
 import SEO from "root/components/SEO";
 import TheBanner from "root/components/TheBanner";
 import WidthLimiter from "root/components/WidthLimiter";
 import Footer from "root/components/Footer";
+import HomePartners from "root/sections/HomePartners";
+
+import colors from "root/styleutils/colors";
 
 const Root = styled.div`
   display: flex;
   flex-direction: column;
+`;
 
-  background-color: #4d00e5;
+const Purple = styled.div`
+  background-color: ${colors.brand};
 `;
 
 const IndexPage = () => {
@@ -19,11 +23,13 @@ const IndexPage = () => {
     <Root>
       <SEO title="Home Page" />
 
-      <WidthLimiter>
-        <TheBanner />
+      <Purple>
+        <WidthLimiter>
+          <TheBanner />
+        </WidthLimiter>
+      </Purple>
 
-        <Link to="/blog">Check the blog</Link>
-      </WidthLimiter>
+      <HomePartners />
 
       <Footer />
     </Root>
