@@ -25,10 +25,6 @@ const IndexPage = () => {
 
       <Navbar />
 
-      <WidthLimiter>
-        <TheBanner />
-      </WidthLimiter>
-
       <Purple>
         <WidthLimiter>
           <TheBanner />
