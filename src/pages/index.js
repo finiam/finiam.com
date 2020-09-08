@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+import colors from "root/styleutils/colors";
 import SEO from "root/components/SEO";
 import TheBanner from "root/components/TheBanner";
 import WidthLimiter from "root/components/WidthLimiter";
 import Footer from "root/components/Footer";
+import Navbar from "root/components/Navbar";
 import HomePartners from "root/sections/HomePartners";
-
-import colors from "root/styleutils/colors";
 
 const Root = styled.div`
   display: flex;
@@ -22,6 +22,8 @@ const IndexPage = () => {
   return (
     <Root>
       <SEO title="Home Page" />
+
+      <Navbar />
 
       <Purple>
         <WidthLimiter>
