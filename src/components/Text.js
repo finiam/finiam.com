@@ -2,26 +2,35 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+function responsivify(minSize, maxSize) {
+  const minViewport = 320;
+  const maxViewport = 1280;
+
+  return `calc(${minSize}px + ${
+    maxSize - minSize
+  } *(100vw - ${minViewport}px)/${maxViewport})`;
+}
+
 const sizes = {
   h1: {
     element: "h1",
-    fontSize: 54,
-    lineHeight: 72,
+    fontSize: responsivify(40, 54),
+    lineHeight: responsivify(52, 72),
   },
   h2: {
     element: "h2",
-    fontSize: 40,
-    lineHeight: 52,
+    fontSize: responsivify(28, 40),
+    lineHeight: responsivify(40, 54),
   },
   h3: {
     element: "h3",
-    fontSize: 28,
-    lineHeight: 40,
+    fontSize: responsivify(20, 28),
+    lineHeight: responsivify(28, 40),
   },
   base: {
     element: "p",
-    fontSize: 20,
-    lineHeight: 28,
+    fontSize: responsivify(14, 20),
+    lineHeight: responsivify(20, 28),
   },
   caption: {
     element: "small",
@@ -30,13 +39,17 @@ const sizes = {
   },
 };
 
+export const FONT_REGULAR = "studiofeixen";
+export const FONT_SPECIAL = "studiofeixen-edgy";
+export const FONT_MONO = "Inconsolata";
+
 const InnerText = styled.div`
   color: ${(props) => props.color};
 
-  font-family: "studiofeixen";
-  font-size: ${(props) => props.sizeObj.fontSize}px;
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.sizeObj.fontSize};
   font-weight: ${(props) => props.weight};
-  line-height: ${(props) => props.sizeObj.lineHeight}px;
+  line-height: ${(props) => props.sizeObj.lineHeight};
 
   u {
     text-decoration: underline;
@@ -66,14 +79,12 @@ Text.propTypes = {
   color: PropTypes.string,
   weight: PropTypes.string,
   children: PropTypes.node.isRequired,
+  fontFamily: PropTypes.oneOf([FONT_REGULAR, FONT_SPECIAL, FONT_MONO]),
 };
 
 Text.defaultProps = {
   size: "base",
   color: "white",
   weight: "normal",
+  fontFamily: FONT_REGULAR,
 };
-
-export const Edgy = styled.span`
-  font-family: "studiofeixen-edgy";
-`;
