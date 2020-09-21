@@ -111,14 +111,13 @@ const StyledCircles = styled(Circles)`
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
 
   width: 100%;
   height: 100%;
 
   .gatsby-image-wrapper {
     width: 50%;
-    height: auto;
 
     opacity: ${(props) => (props.show ? "1" : "0")};
 
