@@ -5,6 +5,7 @@ const breakpoints = {
 };
 
 const mediaQueries = {
+  desktopOnly: `@media (min-width: ${breakpoints.tablet + 1}px)`,
   tablet: `@media (max-width: ${breakpoints.tablet}px)`,
   tabletOnly: `@media (min-width: ${
     breakpoints.mobile + 1

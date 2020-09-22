@@ -6,7 +6,7 @@ import Text from "root/components/Text";
 import Flexbox from "root/components/Flexbox";
 import colors from "root/styleutils/colors";
 import mediaQueries from "root/styleutils/mediaQueries";
-import ImageGrid from "./HomeWhatWeDo/ImageGrid";
+import ImageGrid from "./ImageGrid";
 
 const Root = styled.section`
   padding: ${spacing(17)} 0;
