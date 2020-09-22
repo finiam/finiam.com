@@ -6,28 +6,31 @@ import { columnsToPx, spacing } from "root/styleutils/settings";
 
 import useImages from "./useImages";
 
+const GRID_SPACING = spacing(5);
+
 const ImagesContainer = styled.div`
   display: grid;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  grid-template-columns: min;
+  grid-column-gap: ${GRID_SPACING};
+  grid-row-gap: ${GRID_SPACING};
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 247px 275px;
   width: 100%;
 
   transform: rotate(5deg) translateX(${columnsToPx(4)});
 
   ${mediaQueries.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 275px;
+
     transform: rotate(5deg) translateX(${columnsToPx(1)});
   }
 
-  ${mediaQueries.tabletOnly} {
-    & > *:nth-child(1) {
-      margin-left: ${columnsToPx(1)};
-    }
-  }
-
   ${mediaQueries.mobile} {
-    margin-right: -${columnsToPx(1)};
+    align-self: center;
+    grid-template-columns: 1fr;
+
+    margin-top: ${spacing(21)};
+    margin-right: -${columnsToPx(2)};
 
     transform: rotate(5deg);
   }
@@ -42,6 +45,10 @@ const ImagesContainer = styled.div`
 
   & > *:nth-child(3) {
     grid-area: 2 / 1 / 3 / 3;
+
+    ${mediaQueries.tablet} {
+      grid-area: 2 / 1 / 3 / 4;
+    }
   }
 `;
 
@@ -51,7 +58,9 @@ const ImgRow = styled.div`
   justify-content: flex-end;
   width: 100%;
 
-  margin-left: auto;
+  ${mediaQueries.tabletOnly} {
+    margin-left: ${spacing(10)};
+  }
 
   ${mediaQueries.mobile} {
     width: 300px;
@@ -65,7 +74,7 @@ const ImgRow = styled.div`
   & > *:first-child {
     height: 75%;
     margin-top: auto;
-    margin-right: ${spacing(4)};
+    margin-right: ${GRID_SPACING};
   }
 `;
 
@@ -90,6 +99,10 @@ const Img4 = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   height: 100%;
+
+  ${mediaQueries.mobile} {
+    justify-content: flex-start;
+  }
 
   & > * {
     width: 100%;

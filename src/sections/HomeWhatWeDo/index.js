@@ -26,13 +26,19 @@ const CopyFlex = styled(Flexbox)`
   max-width: ${columnsToPx(7)};
 `;
 
+const Services = styled(Text)`
+  ${mediaQueries.desktopOnly} {
+    margin-left: ${columnsToPx(1)};
+  }
+`;
+
 export default function HomeWhatWeDo() {
   return (
     <Root>
       <Content css={widthLimiterCss}>
-        <CopyFlex direction="column" gap={spacing(7)}>
-          <Text size="h3" color={colors.black} weight="lighter">
-            What we Do
+        <CopyFlex direction="column" gap={spacing(9)}>
+          <Text size="h2" color={colors.black} weight="lighter">
+            What we do
           </Text>
 
           <Text color={colors.grey} weight="lighter">
@@ -41,12 +47,12 @@ export default function HomeWhatWeDo() {
             our partnership.
           </Text>
 
-          <Text color={colors.black}>
+          <Services color={colors.black}>
             → Development <br />
             → Design <br />
             → Product development <br />
             → Research <br />
-          </Text>
+          </Services>
         </CopyFlex>
 
         <ImageGrid />

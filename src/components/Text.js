@@ -20,7 +20,7 @@ const sizes = {
   h2: {
     element: "h2",
     fontSize: responsivify(28, 40),
-    lineHeight: responsivify(40, 54),
+    lineHeight: responsivify(40, 52),
   },
   h3: {
     element: "h3",
@@ -29,8 +29,8 @@ const sizes = {
   },
   base: {
     element: "p",
-    fontSize: responsivify(14, 20),
-    lineHeight: responsivify(20, 28),
+    fontSize: responsivify(16, 20),
+    lineHeight: responsivify(22, 28),
   },
   caption: {
     element: "small",
