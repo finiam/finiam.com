@@ -74,7 +74,7 @@ const JumpingDudeContainer = styled.div`
   }
 
   ${mediaQueries.mobile} {
-    top: -160%;
+    top: -135%;
     right: 20%;
     bottom: 21%;
 
