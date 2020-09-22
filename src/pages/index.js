@@ -6,6 +6,8 @@ import SEO from "root/components/SEO";
 import StaticBanner from "root/components/StaticBanner";
 import WidthLimiter from "root/components/WidthLimiter";
 import Navbar from "root/components/Navbar";
+import HomeWhatWeDo from "root/sections/HomeWhatWeDo";
+import Footer from "root/components/Footer";
 
 const Root = styled.div`
   display: flex;
@@ -16,7 +18,7 @@ const HideOverflow = styled.div`
   overflow: hidden;
 `;
 
-const Purple = styled.div`
+const PurpleHeader = styled.header`
   background-color: ${colors.brand};
 `;
 
@@ -28,17 +30,23 @@ const IndexPage = () => {
       <HideOverflow>
         <Navbar />
 
-        <Purple>
+        <PurpleHeader>
           <WidthLimiter>
             <StaticBanner />
           </WidthLimiter>
-        </Purple>
+        </PurpleHeader>
       </HideOverflow>
+
+      <main>
+        <HomeWhatWeDo />
+      </main>
+
+      <Footer />
 
       {/*
       <HomePartners />
 
-      <Footer />
+
       */}
     </Root>
   );

@@ -26,7 +26,7 @@ const Flexbox = styled.div`
   align-items: ${(props) => props.alignItems};
   justify-content: ${(props) => props.justifyContent};
 
-  & > * + * {
+  & > *:not([style*="display:none"]) + *:not([style*="display:none"]) {
     ${getSide}: ${(props) => props.gap}
   }
 `;
