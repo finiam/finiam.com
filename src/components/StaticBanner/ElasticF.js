@@ -60,7 +60,7 @@ const ElasticFContainer = styled.div`
 `;
 
 const JumpingDudeContainer = styled.div`
-  position: absolute !important;
+  position: absolute;
   top: -145%;
   right: 7%;
 
