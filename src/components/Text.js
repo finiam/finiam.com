@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 function responsivify(minSize, maxSize) {
   const minViewport = 320;
@@ -43,7 +43,7 @@ export const FONT_REGULAR = "studiofeixen";
 export const FONT_SPECIAL = "studiofeixen-edgy";
 export const FONT_MONO = "Inconsolata";
 
-const InnerText = styled.div`
+const InnerText = styled.p`
   color: ${(props) => props.color};
 
   font-family: ${(props) => props.fontFamily};
@@ -64,17 +64,18 @@ const InnerText = styled.div`
   }
 `;
 
-export default function Text({ size, children, ...props }) {
+export default function Text({ size, children, element, ...props }) {
   const sizeObj = sizes[size] || sizes.base;
 
   return (
-    <InnerText as={sizeObj.element} sizeObj={sizeObj} {...props}>
+    <InnerText as={element || sizeObj.element} sizeObj={sizeObj} {...props}>
       {children}
     </InnerText>
   );
 }
 
 Text.propTypes = {
+  element: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.string,
   weight: PropTypes.string,
@@ -83,6 +84,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
+  element: null,
   size: "base",
   color: "white",
   weight: "normal",
