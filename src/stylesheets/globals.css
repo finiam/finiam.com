@@ -1,3 +1,23 @@
+html {
+  -moz-font-feature-settings: "smcp" 1, "onum" 1, "frac" 1, "kern" 1, "liga" 1,
+    "dlig" 1, "swsh" 1;
+  -moz-font-feature-settings: "smcp=1, onum=1, frac=1, kern=1, liga=1, dlig=1, swsh=1";
+  -ms-font-feature-settings: "smcp" 1, "onum" 1, "frac" 1, "kern" 1, "liga" 1,
+    "dlig" 1, "swsh" 1;
+  -o-font-feature-settings: "smcp" 1, "onum" 1, "frac" 1, "kern" 1, "liga" 1,
+    "dlig" 1, "swsh" 1;
+  -webkit-font-feature-settings: "smcp" 1, "onum" 1, "frac" 1, "kern" 1,
+    "liga" 1, "dlig" 1, "swsh" 1;
+  font-feature-settings: "smcp" 1, "onum" 1, "frac" 1, "kern" 1, "liga" 1,
+    "dlig" 1, "swsh" 1;
+  font-feature-settings: normal;
+  font-feature-settings: 'kern', 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  letter-spacing: -0.5px;
+  text-rendering: optimizeLegibility
+}
+
 @font-face {
   font-family: "studiofeixen";
   font-style: normal;
@@ -19,10 +39,8 @@
 @font-face {
   font-family: "studiofeixen-edgy";
   font-style: normal;
+  font-variant-ligatures: common-ligatures;
   font-weight: normal;
-  src: url("./fonts/StudioFeixenSans-EdgyMedium.eot");
-  src: url("./fonts/StudioFeixenSans-EdgyMedium.eot") format("embedded-opentype"),
-    url("./fonts/StudioFeixenSans-EdgyMedium.woff2") format("woff2"),
-    url("./fonts/StudioFeixenSans-EdgyMedium.woff") format("woff"),
-    url("./fonts/StudioFeixenSans-EdgyMedium.ttf") format("truetype");
+
+  src: url("./fonts/StudioFeixenSans-Custom.otf");
 }

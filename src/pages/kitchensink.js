@@ -4,7 +4,7 @@ import styled from "styled-components";
 import WidthLimiter from "root/components/WidthLimiter";
 import Flexbox from "root/components/Flexbox";
 import { columnsToPx, spacing } from "root/styleutils/settings";
-import Text, { Edgy } from "root/components/Text";
+import Text from "root/components/Text";
 import Footer from "root/components/Footer";
 
 const Root = styled.div`
@@ -102,10 +102,6 @@ export default function KitchenSink() {
           <Text size="h3">Hey i am h3</Text>
           <Text>Hey this is base text</Text>
           <Text size="caption">Hey I am a caption</Text>
-
-          <Text>
-            This is regular text, but this is <Edgy>super edgy</Edgy>
-          </Text>
 
           <Text>
             This is <em>italic</em> and this is <b>bold</b>. I am{" "}
