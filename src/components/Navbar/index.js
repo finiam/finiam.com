@@ -59,7 +59,7 @@ export default function Navbar() {
               <SayHiContainer>
                 <StyledSayHi aria-hidden="true" />
 
-                <Link to="/" underline={false}>
+                <Link href="#partners" underline={false}>
                   <Text color={colors.salmon}>Say Hi</Text>
                 </Link>
               </SayHiContainer>
