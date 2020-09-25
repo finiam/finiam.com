@@ -20,7 +20,7 @@ const sizes = {
   h2: {
     element: "h2",
     fontSize: responsivify(28, 40),
-    lineHeight: responsivify(40, 54),
+    lineHeight: responsivify(40, 52),
   },
   h3: {
     element: "h3",
@@ -29,8 +29,8 @@ const sizes = {
   },
   base: {
     element: "p",
-    fontSize: responsivify(14, 20),
-    lineHeight: responsivify(20, 28),
+    fontSize: responsivify(16, 20),
+    lineHeight: responsivify(22, 28),
   },
   caption: {
     element: "small",
@@ -43,7 +43,7 @@ export const FONT_REGULAR = "studiofeixen";
 export const FONT_SPECIAL = "studiofeixen-edgy";
 export const FONT_MONO = "Inconsolata";
 
-const InnerText = styled.div`
+const InnerText = styled.p`
   color: ${(props) => props.color};
 
   font-family: ${(props) => props.fontFamily};
@@ -64,17 +64,18 @@ const InnerText = styled.div`
   }
 `;
 
-export default function Text({ size, children, ...props }) {
+export default function Text({ size, children, element, ...props }) {
   const sizeObj = sizes[size] || sizes.base;
 
   return (
-    <InnerText as={sizeObj.element} sizeObj={sizeObj} {...props}>
+    <InnerText as={element || sizeObj.element} sizeObj={sizeObj} {...props}>
       {children}
     </InnerText>
   );
 }
 
 Text.propTypes = {
+  element: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.string,
   weight: PropTypes.string,
@@ -83,6 +84,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
+  element: null,
   size: "base",
   color: "white",
   weight: "normal",

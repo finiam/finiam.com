@@ -8,7 +8,7 @@ import Flexbox from "root/components/Flexbox";
 
 import BigM from "./BigM";
 import Mouse from "./Mouse";
-import ElasticF from "./ElasticF";
+import FContainer from "./FContainer";
 
 const Root = styled.div`
   position: relative;
@@ -84,7 +84,7 @@ export default function StaticBanner() {
         </Text>
       </Copy>
 
-      <ElasticF />
+      <FContainer />
 
       <FindOutMore gap={spacing(4)} alignItems="center">
         <Mouse />

@@ -5,8 +5,8 @@ import Img from "gatsby-image/withIEPolyfill";
 import { useStaticQuery, graphql } from "gatsby";
 
 import { columnsToPx, spacing } from "root/styleutils/settings";
+import Text from "root/components/Text";
 import ElasticF from "./ElasticF";
-import Text from "./Text";
 
 export const query = graphql`
   query {

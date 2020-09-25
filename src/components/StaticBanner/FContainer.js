@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Img from "gatsby-image/withIEPolyfill";
 import { useStaticQuery, graphql } from "gatsby";
-import StaticF from "root/components/StaticF";
+import StaticF from "root/components/StaticBanner/StaticF";
 import { columnsToPx, spacing } from "root/styleutils/settings";
 import styled from "styled-components";
 import mediaQueries from "root/styleutils/mediaQueries";
@@ -10,14 +10,6 @@ import Circles from "./Circles";
 
 const query = graphql`
   query {
-    file(relativePath: { eq: "jumping-dude.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-
     left: file(relativePath: { eq: "jumping-dude-left.png" }) {
       childImageSharp {
         fluid(maxWidth: 300, quality: 90) {
@@ -60,7 +52,7 @@ const ElasticFContainer = styled.div`
 `;
 
 const JumpingDudeContainer = styled.div`
-  position: absolute;
+  position: absolute !important;
   top: -145%;
   right: 7%;
 
@@ -74,7 +66,7 @@ const JumpingDudeContainer = styled.div`
   }
 
   ${mediaQueries.mobile} {
-    top: -135%;
+    top: -160%;
     right: 20%;
     bottom: 21%;
 

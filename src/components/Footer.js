@@ -3,11 +3,14 @@ import styled from "styled-components";
 
 import colors from "root/styleutils/colors";
 import { spacing, COLUMN_SIZE } from "root/styleutils/settings";
-import WidthLimiter from "./WidthLimiter";
+import { desktopOnly, tabletAndBelow } from "root/styleutils/mediaHelpers";
+import mediaQueries from "root/styleutils/mediaQueries";
+import { widthLimiterCss } from "./WidthLimiter";
 import Text from "./Text";
 import Flexbox from "./Flexbox";
 import Link from "./Link";
 import Logo from "./Logo";
+import ShortLogo from "./ShortLogo";
 
 const Root = styled.footer`
   padding: ${spacing(15)} 0;
@@ -16,50 +19,87 @@ const Root = styled.footer`
   background-color: ${colors.black};
 `;
 
+const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  ${mediaQueries.mobile} {
+    flex-direction: column;
+  }
+`;
+
+const Addresses = styled(Flexbox)`
+  ${mediaQueries.mobile} {
+    margin-top: ${spacing(10)};
+  }
+`;
+
+const AddressBlock = styled.address`
+  display: flex;
+  flex-direction: column;
+
+  ${mediaQueries.desktopOnly} {
+    margin-left: ${COLUMN_SIZE}px;
+  }
+
+  & + & {
+    margin-left: ${COLUMN_SIZE}px;
+  }
+`;
+
+const FollowUs = styled(Flexbox)`
+  ${mediaQueries.mobile} {
+    margin-top: ${spacing(10)};
+  }
+`;
+
 export default function Footer() {
   return (
     <Root>
-      <WidthLimiter>
-        <Flexbox justifyContent="space-between">
-          <Link to="/" underline={false}>
-            <Logo />
-          </Link>
+      <Content css={widthLimiterCss}>
+        <Link to="/" underline={false} css={desktopOnly}>
+          <Logo />
+        </Link>
 
-          <Flexbox gap={`${COLUMN_SIZE}px`}>
-            <Text color={colors.white}>We’re based in →</Text>
+        <ShortLogo css={tabletAndBelow} />
 
-            <Flexbox direction="column">
-              <Text color={colors.green}>Braga, Portugal</Text>
+        <Addresses>
+          <Text color={colors.white} css={desktopOnly}>
+            We’re based in →
+          </Text>
 
-              <Link
-                href="https://goo.gl/maps/DgtQLNXUofzD969k8"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Text>Get directions</Text>
-              </Link>
-            </Flexbox>
+          <AddressBlock>
+            <Text color={colors.green}>Braga, Portugal</Text>
 
-            <Flexbox direction="column">
-              <Text color={colors.green}>Boston, USA</Text>
+            <Link
+              href="https://goo.gl/maps/DgtQLNXUofzD969k8"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Text>Get directions</Text>
+            </Link>
+          </AddressBlock>
 
-              <Link
-                href="https://goo.gl/maps/U97F3EfaR9kjCjpN6"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Text>Get directions</Text>
-              </Link>
-            </Flexbox>
-          </Flexbox>
+          <AddressBlock>
+            <Text color={colors.green}>Boston, USA</Text>
 
-          <Flexbox direction="column">
-            <Text color={colors.green}>Follow Us</Text>
+            <Link
+              href="https://goo.gl/maps/U97F3EfaR9kjCjpN6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Text>Get directions</Text>
+            </Link>
+          </AddressBlock>
+        </Addresses>
 
-            <Text>In / Md / Tw / Git / Ins</Text>
-          </Flexbox>
-        </Flexbox>
-      </WidthLimiter>
+        <FollowUs direction="column">
+          <Text color={colors.green}>Follow Us</Text>
+
+          <Text>In / Md / Tw / Git / Ins</Text>
+        </FollowUs>
+      </Content>
     </Root>
   );
 }
