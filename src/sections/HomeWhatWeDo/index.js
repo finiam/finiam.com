@@ -62,7 +62,6 @@ export default function HomeWhatWeDo() {
             </Text>
           </Services>
         </CopyFlex>
-
         <ImageGrid />
       </Content>
     </Root>

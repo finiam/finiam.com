@@ -8,6 +8,7 @@ import WidthLimiter from "root/components/WidthLimiter";
 import Navbar from "root/components/Navbar";
 import HomeWhatWeDo from "root/sections/HomeWhatWeDo";
 import Footer from "root/components/Footer";
+import HomePartners from "root/sections/HomePartners";
 
 const Root = styled.div`
   display: flex;
@@ -39,15 +40,11 @@ const IndexPage = () => {
 
       <main>
         <HomeWhatWeDo />
+
+        <HomePartners />
       </main>
 
       <Footer />
-
-      {/*
-      <HomePartners />
-
-
-      */}
     </Root>
   );
 };

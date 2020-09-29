@@ -23,6 +23,7 @@ function getSide({ direction }) {
 const Flexbox = styled.div`
   display: ${(props) => (props.inline ? "inline-flex" : "flex")};
   flex-direction: ${(props) => props.direction};
+  flex-wrap: ${(props) => props.flexWrap};
   align-items: ${(props) => props.alignItems};
   justify-content: ${(props) => props.justifyContent};
 
@@ -40,12 +41,14 @@ Flexbox.propTypes = {
   ]),
   justifyContent: PropTypes.string,
   alignItems: PropTypes.string,
+  flexWrap: PropTypes.string,
 };
 
 Flexbox.defaultProps = {
   direction: "row",
   justifyContent: "initial",
   alignItems: "initial",
+  flexWrap: "initial",
 };
 
 export default Flexbox;
