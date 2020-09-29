@@ -16,7 +16,7 @@ const Root = styled.footer`
   padding: ${spacing(15)} 0;
   margin-top: auto;
 
-  background-color: ${colors.black};
+  background-color: ${colors.blackRussian};
 `;
 
 const Content = styled.div`
@@ -70,34 +70,40 @@ export default function Footer() {
           </Text>
 
           <AddressBlock>
-            <Text color={colors.green}>Braga, Portugal</Text>
+            <Text color={colors.green} weight="lighter">
+              Braga, Portugal
+            </Text>
 
             <Link
               href="https://goo.gl/maps/DgtQLNXUofzD969k8"
               target="_blank"
               rel="noreferrer"
             >
-              <Text>Get directions</Text>
+              <Text weight="lighter">Get directions</Text>
             </Link>
           </AddressBlock>
 
           <AddressBlock>
-            <Text color={colors.green}>Boston, USA</Text>
+            <Text color={colors.green} weight="lighter">
+              Boston, USA
+            </Text>
 
             <Link
               href="https://goo.gl/maps/U97F3EfaR9kjCjpN6"
               target="_blank"
               rel="noreferrer"
             >
-              <Text>Get directions</Text>
+              <Text weight="lighter">Get directions</Text>
             </Link>
           </AddressBlock>
         </Addresses>
 
         <FollowUs direction="column">
-          <Text color={colors.green}>Follow Us</Text>
+          <Text color={colors.green} weight="lighter">
+            Follow Us
+          </Text>
 
-          <Text>In / Md / Tw / Git / Ins</Text>
+          <Text weight="lighter">In / Md / Tw / Git / Ins</Text>
         </FollowUs>
       </Content>
     </Root>

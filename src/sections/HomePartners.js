@@ -12,7 +12,12 @@ import Button from "root/components/Button";
 import mediaQueries from "root/styleutils/mediaQueries";
 
 const Root = styled.section`
-  padding: ${spacing(21)} 0;
+  padding-bottom: ${spacing(29)};
+  overflow: hidden;
+
+  ${mediaQueries.mobile} {
+    padding: ${spacing(17)} 0;
+  }
 `;
 
 const CopyBlock = styled.div`
@@ -54,6 +59,14 @@ const Partners = styled(Flexbox)`
   }
 `;
 
+const Partner = styled.a`
+  transition: 0.25s opacity ease-in;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
 const LastCopyBlock = styled(CopyBlock)`
   margin-bottom: ${spacing(4)};
 `;
@@ -64,7 +77,8 @@ export default function HomePartners() {
       <WidthLimiter>
         <CopyBlock>
           <Text size="h2" color={colors.brand} weight="lighter">
-            We are trusted by some of the best fintech companies in the world.
+            We are trusted by some of the coolest fintech companies in the
+            world.
           </Text>
         </CopyBlock>
 
@@ -74,9 +88,29 @@ export default function HomePartners() {
           alignItems="center"
           flexWrap="wrap"
         >
-          <Crediflux />
-          <Utrust />
-          <BetProtocol />
+          <Partner
+            href="https://crediflux.pt"
+            rel="noopener"
+            target="_blank"
+            aria-label="Crediflux"
+          >
+            <Crediflux />
+          </Partner>
+          <Partner
+            href="https://utrust.com"
+            rel="noopener"
+            target="_blank"
+            aria-label="Utrust"
+          >
+            <Utrust />
+          </Partner>
+          <Partner
+            href="https://www.betprotocol.com/"
+            rel="noopener"
+            target="_blank"
+          >
+            <BetProtocol />
+          </Partner>
         </Partners>
 
         <LastCopyBlock>
