@@ -45,9 +45,6 @@ const Partners = styled(Flexbox)`
 
     & > * {
       margin-top: ${spacing(8)};
-    }
-
-    & > * {
       margin-right: ${spacing(6)};
     }
 
