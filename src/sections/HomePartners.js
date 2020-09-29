@@ -68,7 +68,7 @@ const Partner = styled.a`
 `;
 
 const LastCopyBlock = styled(CopyBlock)`
-  margin-bottom: ${spacing(4)};
+  margin-bottom: ${spacing(7)};
 `;
 
 export default function HomePartners() {
@@ -90,7 +90,7 @@ export default function HomePartners() {
         >
           <Partner
             href="https://crediflux.pt"
-            rel="noopener"
+            rel="noreferrer"
             target="_blank"
             aria-label="Crediflux"
           >
@@ -98,7 +98,7 @@ export default function HomePartners() {
           </Partner>
           <Partner
             href="https://utrust.com"
-            rel="noopener"
+            rel="noreferrer"
             target="_blank"
             aria-label="Utrust"
           >
@@ -106,7 +106,7 @@ export default function HomePartners() {
           </Partner>
           <Partner
             href="https://www.betprotocol.com/"
-            rel="noopener"
+            rel="noreferrer"
             target="_blank"
           >
             <BetProtocol />

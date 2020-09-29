@@ -12,6 +12,39 @@ import Link from "./Link";
 import Logo from "./Logo";
 import ShortLogo from "./ShortLogo";
 
+const SOCIAL_LINKS = [
+  {
+    key: "in",
+    "aria-label": "LinkedIn",
+    name: "In",
+    href: "https://www.linkedin.com/company/finiam",
+  },
+  {
+    key: "medium",
+    "aria-label": "Medium",
+    name: "Md",
+    href: "https://medium.com/finiam",
+  },
+  {
+    key: "twi",
+    "aria-label": "Twitter",
+    name: "Tw",
+    href: "https://twitter.com/wearefiniam",
+  },
+  {
+    key: "git",
+    "aria-label": "Github",
+    name: "Git",
+    href: "https://github.com/finiam",
+  },
+  {
+    key: "ins",
+    "aria-label": "Instagram",
+    name: "Ins",
+    href: "https://www.instagram.com/wearefiniam/",
+  },
+];
+
 const Root = styled.footer`
   padding: ${spacing(15)} 0;
   margin-top: auto;
@@ -51,6 +84,15 @@ const AddressBlock = styled.address`
 const FollowUs = styled(Flexbox)`
   ${mediaQueries.mobile} {
     margin-top: ${spacing(10)};
+  }
+`;
+
+const SocialLinks = styled.ul`
+  display: flex;
+  flex-direction: row;
+
+  a {
+    text-decoration: none;
   }
 `;
 
@@ -103,7 +145,25 @@ export default function Footer() {
             Follow Us
           </Text>
 
-          <Text weight="lighter">In / Md / Tw / Git / Ins</Text>
+          <SocialLinks>
+            {SOCIAL_LINKS.map((socialLink, index) => (
+              <li key={socialLink.key}>
+                <a
+                  href={socialLink.href}
+                  aria-label={socialLink["aria-label"]}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Text weight="lighter">
+                    {socialLink.name}
+                    &nbsp;
+                    {index === SOCIAL_LINKS.length - 1 ? "" : "/"}
+                    &nbsp;
+                  </Text>
+                </a>
+              </li>
+            ))}
+          </SocialLinks>
         </FollowUs>
       </Content>
     </Root>
