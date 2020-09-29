@@ -3,7 +3,7 @@ const colors = {
   salmon: "#FF5760",
   green: "#5EF38B",
   black: "#252525",
-  grey: "#858585",
+  grey: "#757575",
   lightBlack: "#606060",
 };
 

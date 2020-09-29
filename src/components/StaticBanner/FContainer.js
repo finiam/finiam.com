@@ -12,7 +12,7 @@ const query = graphql`
   query {
     left: file(relativePath: { eq: "jumping-dude-left.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300, quality: 90) {
+        fluid(maxWidth: 150, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
@@ -20,7 +20,7 @@ const query = graphql`
 
     right: file(relativePath: { eq: "jumping-dude-right.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300, quality: 90) {
+        fluid(maxWidth: 150, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
