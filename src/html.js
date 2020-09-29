@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes}>
+    <html {...props.htmlAttributes} lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -12,7 +12,10 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        ></link>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
