@@ -148,18 +148,8 @@ export default function ElasticF() {
         <JumpingDudeContainer>
           <StyledCircles />
           <ImageContainer show={leftImgLoaded && rightImgLoaded}>
-            <Img
-              fluid={jumpingDudeLeft}
-              fadeIn={false}
-              onLoad={onLoadLeft}
-              loading="eager"
-            />
-            <Img
-              fluid={jumpingDudeRight}
-              fadeIn={false}
-              onLoad={onLoadRight}
-              loading="eager"
-            />
+            <Img fluid={jumpingDudeLeft} fadeIn={false} onLoad={onLoadLeft} />
+            <Img fluid={jumpingDudeRight} fadeIn={false} onLoad={onLoadRight} />
           </ImageContainer>
         </JumpingDudeContainer>
       </ElasticFContainer>
