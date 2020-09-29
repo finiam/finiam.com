@@ -12,7 +12,7 @@ const query = graphql`
   query {
     left: file(relativePath: { eq: "jumping-dude-left.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300, quality: 90) {
+        fluid(maxWidth: 150, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
@@ -20,7 +20,7 @@ const query = graphql`
 
     right: file(relativePath: { eq: "jumping-dude-right.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300, quality: 90) {
+        fluid(maxWidth: 150, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
@@ -66,7 +66,7 @@ const JumpingDudeContainer = styled.div`
   }
 
   ${mediaQueries.mobile} {
-    top: -160%;
+    top: -137%;
     right: 20%;
     bottom: 21%;
 

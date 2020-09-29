@@ -23,7 +23,7 @@ const Content = styled.div`
 `;
 
 const CopyFlex = styled(Flexbox)`
-  max-width: ${columnsToPx(7)};
+  max-width: ${columnsToPx(9)};
 `;
 
 const Services = styled(Flexbox)`
