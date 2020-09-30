@@ -43,6 +43,11 @@ const SOCIAL_LINKS = [
     name: "Ins",
     href: "https://www.instagram.com/wearefiniam/",
   },
+  {
+    key: "fb",
+    name: "Fb",
+    href: "https://www.facebook.com/wearefiniam",
+  },
 ];
 
 const Root = styled.footer`

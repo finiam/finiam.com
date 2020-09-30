@@ -30,9 +30,15 @@ const ImagesContainer = styled.div`
     grid-template-columns: 1fr;
 
     margin-top: ${spacing(21)};
-    margin-right: -${columnsToPx(2)};
+    margin-right: -${columnsToPx(1.5)};
+    margin-left: ${columnsToPx(1.5)};
 
     transform: rotate(5deg);
+  }
+
+  ${mediaQueries.smallMobile} {
+    margin-right: 0;
+    margin-left: 0;
   }
 
   & > *:nth-child(1) {
@@ -56,14 +62,18 @@ const ImgRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100%;
+
+  width: 80%;
+  margin-left: auto;
 
   ${mediaQueries.tabletOnly} {
+    width: 100%;
     margin-left: ${spacing(10)};
   }
 
   ${mediaQueries.mobile} {
     width: 300px;
+    margin-left: initial;
   }
 
   & > * {
@@ -105,8 +115,7 @@ const Img4 = styled.div`
   }
 
   & > * {
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
   }
 `;
 

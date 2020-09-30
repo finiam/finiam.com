@@ -89,14 +89,6 @@ export default function HomePartners() {
           flexWrap="wrap"
         >
           <Partner
-            href="https://crediflux.pt"
-            rel="noreferrer"
-            target="_blank"
-            aria-label="Crediflux"
-          >
-            <Crediflux />
-          </Partner>
-          <Partner
             href="https://utrust.com"
             rel="noreferrer"
             target="_blank"
@@ -110,6 +102,14 @@ export default function HomePartners() {
             target="_blank"
           >
             <BetProtocol />
+          </Partner>
+          <Partner
+            href="https://crediflux.netlify.app"
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Crediflux"
+          >
+            <Crediflux />
           </Partner>
         </Partners>
 
