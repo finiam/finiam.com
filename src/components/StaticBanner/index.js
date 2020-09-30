@@ -64,6 +64,10 @@ const FindOutMore = styled(Flexbox)`
   ${mediaQueries.tablet} {
     display: none;
   }
+
+  p {
+    font-size: 16px;
+  }
 `;
 
 export default function StaticBanner() {

@@ -52,7 +52,7 @@ export default function Navbar() {
             </Link>
 
             <Links gap={spacing(7)}>
-              <Link to="/blog" underline={false}>
+              <Link href="https://medium.com/finiam" underline={false}>
                 <Text>Blog</Text>
               </Link>
 

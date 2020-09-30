@@ -12,11 +12,49 @@ import Link from "./Link";
 import Logo from "./Logo";
 import ShortLogo from "./ShortLogo";
 
+const SOCIAL_LINKS = [
+  {
+    key: "in",
+    "aria-label": "LinkedIn",
+    name: "In",
+    href: "https://www.linkedin.com/company/finiam",
+  },
+  {
+    key: "medium",
+    "aria-label": "Medium",
+    name: "Md",
+    href: "https://medium.com/finiam",
+  },
+  {
+    key: "twi",
+    "aria-label": "Twitter",
+    name: "Tw",
+    href: "https://twitter.com/wearefiniam",
+  },
+  {
+    key: "git",
+    "aria-label": "Github",
+    name: "Git",
+    href: "https://github.com/finiam",
+  },
+  {
+    key: "ins",
+    "aria-label": "Instagram",
+    name: "Ins",
+    href: "https://www.instagram.com/wearefiniam/",
+  },
+  {
+    key: "fb",
+    name: "Fb",
+    href: "https://www.facebook.com/wearefiniam",
+  },
+];
+
 const Root = styled.footer`
   padding: ${spacing(15)} 0;
   margin-top: auto;
 
-  background-color: ${colors.black};
+  background-color: ${colors.blackRussian};
 `;
 
 const Content = styled.div`
@@ -54,6 +92,15 @@ const FollowUs = styled(Flexbox)`
   }
 `;
 
+const SocialLinks = styled.ul`
+  display: flex;
+  flex-direction: row;
+
+  a {
+    text-decoration: none;
+  }
+`;
+
 export default function Footer() {
   return (
     <Root>
@@ -70,34 +117,58 @@ export default function Footer() {
           </Text>
 
           <AddressBlock>
-            <Text color={colors.green}>Braga, Portugal</Text>
+            <Text color={colors.green} weight="lighter">
+              Braga, Portugal
+            </Text>
 
             <Link
               href="https://goo.gl/maps/DgtQLNXUofzD969k8"
               target="_blank"
               rel="noreferrer"
             >
-              <Text>Get directions</Text>
+              <Text weight="lighter">Get directions</Text>
             </Link>
           </AddressBlock>
 
           <AddressBlock>
-            <Text color={colors.green}>Boston, USA</Text>
+            <Text color={colors.green} weight="lighter">
+              Boston, USA
+            </Text>
 
             <Link
               href="https://goo.gl/maps/U97F3EfaR9kjCjpN6"
               target="_blank"
               rel="noreferrer"
             >
-              <Text>Get directions</Text>
+              <Text weight="lighter">Get directions</Text>
             </Link>
           </AddressBlock>
         </Addresses>
 
         <FollowUs direction="column">
-          <Text color={colors.green}>Follow Us</Text>
+          <Text color={colors.green} weight="lighter">
+            Follow Us
+          </Text>
 
-          <Text>In / Md / Tw / Git / Ins</Text>
+          <SocialLinks>
+            {SOCIAL_LINKS.map((socialLink, index) => (
+              <li key={socialLink.key}>
+                <a
+                  href={socialLink.href}
+                  aria-label={socialLink["aria-label"]}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Text weight="lighter">
+                    {socialLink.name}
+                    &nbsp;
+                    {index === SOCIAL_LINKS.length - 1 ? "" : "/"}
+                    &nbsp;
+                  </Text>
+                </a>
+              </li>
+            ))}
+          </SocialLinks>
         </FollowUs>
       </Content>
     </Root>

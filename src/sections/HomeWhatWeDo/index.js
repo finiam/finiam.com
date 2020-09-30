@@ -9,8 +9,12 @@ import mediaQueries from "root/styleutils/mediaQueries";
 import ImageGrid from "./ImageGrid";
 
 const Root = styled.section`
-  padding: ${spacing(17)} 0;
+  padding: ${spacing(29)} 0;
   overflow: hidden;
+
+  ${mediaQueries.mobile} {
+    padding: ${spacing(17)} 0;
+  }
 `;
 
 const Content = styled.div`

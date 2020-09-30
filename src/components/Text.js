@@ -11,7 +11,7 @@ function responsivify(minSize, maxSize) {
   } *(100vw - ${minViewport}px)/${maxViewport})`;
 }
 
-const sizes = {
+export const FONT_SIZES = {
   h1: {
     element: "h1",
     fontSize: responsivify(40, 54),
@@ -65,7 +65,7 @@ const InnerText = styled.p`
 `;
 
 export default function Text({ size, children, element, ...props }) {
-  const sizeObj = sizes[size] || sizes.base;
+  const sizeObj = FONT_SIZES[size] || FONT_SIZES.base;
 
   return (
     <InnerText as={element || sizeObj.element} sizeObj={sizeObj} {...props}>
@@ -76,7 +76,7 @@ export default function Text({ size, children, element, ...props }) {
 
 Text.propTypes = {
   element: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(sizes)),
+  size: PropTypes.oneOf(Object.keys(FONT_SIZES)),
   color: PropTypes.string,
   weight: PropTypes.string,
   children: PropTypes.node.isRequired,

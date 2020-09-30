@@ -12,7 +12,12 @@ import Button from "root/components/Button";
 import mediaQueries from "root/styleutils/mediaQueries";
 
 const Root = styled.section`
-  padding: ${spacing(21)} 0;
+  padding-bottom: ${spacing(29)};
+  overflow: hidden;
+
+  ${mediaQueries.mobile} {
+    padding: ${spacing(17)} 0;
+  }
 `;
 
 const CopyBlock = styled.div`
@@ -55,7 +60,7 @@ const Partners = styled(Flexbox)`
 `;
 
 const LastCopyBlock = styled(CopyBlock)`
-  margin-bottom: ${spacing(4)};
+  margin-bottom: ${spacing(7)};
 `;
 
 export default function HomePartners() {
@@ -64,7 +69,8 @@ export default function HomePartners() {
       <WidthLimiter>
         <CopyBlock>
           <Text size="h2" color={colors.brand} weight="lighter">
-            We are trusted by some of the best fintech companies in the world.
+            We are trusted by some of the coolest fintech companies in the
+            world.
           </Text>
         </CopyBlock>
 
@@ -74,9 +80,11 @@ export default function HomePartners() {
           alignItems="center"
           flexWrap="wrap"
         >
-          <Crediflux />
           <Utrust />
+
           <BetProtocol />
+
+          <Crediflux />
         </Partners>
 
         <LastCopyBlock>

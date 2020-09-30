@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import colors from "root/styleutils/colors";
 import { spacing } from "root/styleutils/settings";
-import { FONT_REGULAR } from "./Text";
+import { FONT_REGULAR, FONT_SIZES } from "./Text";
 
 const Button = styled.button`
   display: inline-block;
@@ -16,7 +16,15 @@ const Button = styled.button`
   cursor: pointer;
 
   font-family: ${FONT_REGULAR};
+  font-size: ${FONT_SIZES.base.fontSize};
+  line-height: ${FONT_SIZES.base.lineHeight};
   text-decoration: none;
+
+  transition: 0.25s opacity ease-in;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 Button.propTypes = {
