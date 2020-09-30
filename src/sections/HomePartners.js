@@ -59,14 +59,6 @@ const Partners = styled(Flexbox)`
   }
 `;
 
-const Partner = styled.a`
-  transition: 0.25s opacity ease-in;
-
-  &:hover {
-    opacity: 0.6;
-  }
-`;
-
 const LastCopyBlock = styled(CopyBlock)`
   margin-bottom: ${spacing(7)};
 `;
@@ -88,29 +80,11 @@ export default function HomePartners() {
           alignItems="center"
           flexWrap="wrap"
         >
-          <Partner
-            href="https://utrust.com"
-            rel="noreferrer"
-            target="_blank"
-            aria-label="Utrust"
-          >
-            <Utrust />
-          </Partner>
-          <Partner
-            href="https://www.betprotocol.com/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <BetProtocol />
-          </Partner>
-          <Partner
-            href="https://crediflux.netlify.app"
-            rel="noreferrer"
-            target="_blank"
-            aria-label="Crediflux"
-          >
-            <Crediflux />
-          </Partner>
+          <Utrust />
+
+          <BetProtocol />
+
+          <Crediflux />
         </Partners>
 
         <LastCopyBlock>
