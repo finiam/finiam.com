@@ -56,7 +56,7 @@ const Copy = styled.div`
   }
 
   ${mediaQueries.mobile} {
-    margin-bottom: ${spacing(24)};
+    margin-bottom: ${spacing(35)};
   }
 `;
 
