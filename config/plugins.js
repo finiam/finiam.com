@@ -105,7 +105,7 @@ const plugins = [
     options: {
       silent: false,
       fallbacks: false,
-      inlineFonts: false,
+      inlineFonts: true,
       inlineCss: true,
       fontDisplay: "block",
     },
