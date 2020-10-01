@@ -11,22 +11,18 @@ html {
   font-feature-settings: "smcp" 1, "onum" 1, "frac" 1, "kern" 1, "liga" 1,
     "dlig" 1, "swsh" 1;
   font-feature-settings: normal;
-  font-feature-settings: 'kern', 'liga';
+  font-feature-settings: "kern", "liga";
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   letter-spacing: -0.5px;
-  text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility;
 }
 
 @font-face {
   font-family: "studiofeixen";
   font-style: normal;
   font-weight: normal;
-  src: url("./fonts/StudioFeixenSans-Medium.eot");
-  src: url("./fonts/StudioFeixenSans-Medium.eot") format("embedded-opentype"),
-    url("./fonts/StudioFeixenSans-Medium.woff2") format("woff2"),
-    url("./fonts/StudioFeixenSans-Medium.woff") format("woff"),
-    url("./fonts/StudioFeixenSans-Medium.ttf") format("truetype");
+  src: url("./fonts/StudioFeixenSans-Medium.ttf");
 }
 
 @font-face {

@@ -101,11 +101,12 @@ const plugins = [
   },
   "gatsby-plugin-sitemap",
   {
-    resolve: `gatsby-plugin-subfont`,
+    resolve: "gatsby-plugin-subfont",
     options: {
       silent: false,
-      fallback: false,
+      fallbacks: false,
       inlineFonts: true,
+      inlineCss: false,
       fontDisplay: "block",
     },
   },
