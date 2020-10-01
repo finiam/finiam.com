@@ -3,7 +3,18 @@ const siteMetadata = {
   title: "Finiam",
   author: "Finiam",
   description: "Finiam's Website",
-  keywords: "finiam",
+  keywords: [
+    "financial",
+    "fintech",
+    "consulting",
+    "agency",
+    "digital",
+    "web development",
+    "software engineering",
+    "building",
+    "startup",
+    "future",
+  ].join(","),
   twitter: "@wearefiniam",
 };
 

@@ -26,7 +26,10 @@ const PurpleHeader = styled.header`
 const IndexPage = () => {
   return (
     <Root>
-      <SEO title="Home Page" />
+      <SEO
+        title="Finiam"
+        description="We are finiam. Improving people's lives by untangling the financial world."
+      />
 
       <HideOverflow>
         <Navbar />
