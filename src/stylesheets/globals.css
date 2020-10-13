@@ -30,21 +30,14 @@ html {
   font-family: "studiofeixen";
   font-style: normal;
   font-weight: normal;
-  src: url("./fonts/medium.ttf");
+  /* Sans Edgy Medium + Sans Medium */
+  src: url("./fonts/medium.otf");
 }
 
 @font-face {
   font-family: "studiofeixen";
   font-style: normal;
   font-weight: 300;
-  src: url("./fonts/regular.ttf");
-}
-
-@font-face {
-  font-family: "studiofeixen-edgy";
-  font-style: normal;
-  font-variant-ligatures: common-ligatures;
-  font-weight: normal;
-
-  src: url("./fonts/custom.otf");
+  /* Sans Edgy Regular + Sans Regular */
+  src: url("./fonts/regular.otf");
 }

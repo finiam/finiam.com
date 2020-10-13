@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { columnsToPx, spacing } from "root/styleutils/settings";
 import mediaQueries from "root/styleutils/mediaQueries";
-import Text, { FONT_MONO, FONT_SPECIAL } from "root/components/Text";
+import Text, { FONT_MONO } from "root/components/Text";
 import Flexbox from "root/components/Flexbox";
 
 import BigM from "./BigM";
@@ -76,13 +76,12 @@ export default function StaticBanner() {
       <StyledBigW aria-hidden="true" />
 
       <Copy>
-        <Text size="h1" color="#B294EF;" fontFamily={FONT_SPECIAL}>
+        <Text size="h1" color="#B294EF;">
           We are finiam.
         </Text>
         <Text
           size="h1"
           aria-label="We are finiam. Improving people's lives by untangling the financial world."
-          fontFamily={FONT_SPECIAL}
         >
           Improving people&apos;s lives by untangling the financial world.
         </Text>
