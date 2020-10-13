@@ -18,18 +18,26 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/*
+  Fonts acquired at https://fonts.studiofeixen.ch/
+
+  Re-use of these files without a license is strictly prohibited.
+
+  Licensed for the finiam.com domain.
+*/
+
 @font-face {
   font-family: "studiofeixen";
   font-style: normal;
   font-weight: normal;
-  src: url("./fonts/StudioFeixenSans-Medium.ttf");
+  src: url("./fonts/medium.ttf");
 }
 
 @font-face {
   font-family: "studiofeixen";
   font-style: normal;
   font-weight: 300;
-  src: url("./fonts/StudioFeixenSans-Regular.otf");
+  src: url("./fonts/regular.ttf");
 }
 
 @font-face {
@@ -38,5 +46,5 @@ html {
   font-variant-ligatures: common-ligatures;
   font-weight: normal;
 
-  src: url("./fonts/StudioFeixenSans-Custom.otf");
+  src: url("./fonts/custom.otf");
 }
