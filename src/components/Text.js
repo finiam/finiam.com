@@ -40,7 +40,6 @@ export const FONT_SIZES = {
 };
 
 export const FONT_REGULAR = "studiofeixen";
-export const FONT_SPECIAL = "studiofeixen-edgy";
 export const FONT_MONO = "Inconsolata";
 
 const InnerText = styled.p`
@@ -80,7 +79,7 @@ Text.propTypes = {
   color: PropTypes.string,
   weight: PropTypes.string,
   children: PropTypes.node.isRequired,
-  fontFamily: PropTypes.oneOf([FONT_REGULAR, FONT_SPECIAL, FONT_MONO]),
+  fontFamily: PropTypes.oneOf([FONT_REGULAR, FONT_MONO]),
 };
 
 Text.defaultProps = {
