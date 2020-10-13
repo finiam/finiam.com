@@ -65,7 +65,7 @@ const LastCopyBlock = styled(CopyBlock)`
 
 export default function HomePartners() {
   return (
-    <Root id="partners">
+    <Root>
       <WidthLimiter>
         <CopyBlock>
           <Text size="h2" color={colors.brand} weight="lighter">
