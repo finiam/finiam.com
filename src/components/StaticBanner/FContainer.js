@@ -1,32 +1,14 @@
-import React, { useState } from "react";
-import Img from "gatsby-image/withIEPolyfill";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import Img from "react-optimized-image";
+
 import StaticF from "root/components/StaticBanner/StaticF";
 import { columnsToPx, spacing } from "root/styleutils/settings";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import mediaQueries from "root/styleutils/mediaQueries";
+import jumpingDudeLeft from "root/assets/jumping-dude-left.png";
+import jumpingDudeRight from "root/assets/jumping-dude-right.png";
 
 import Circles from "./Circles";
-
-const query = graphql`
-  query {
-    left: file(relativePath: { eq: "jumping-dude-left.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-
-    right: file(relativePath: { eq: "jumping-dude-right.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-  }
-`;
 
 const ElasticFContainer = styled.div`
   position: relative;
@@ -100,6 +82,15 @@ const StyledCircles = styled(Circles)`
   }
 `;
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -108,48 +99,47 @@ const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  .gatsby-image-wrapper {
-    width: 50%;
-
-    opacity: ${(props) => (props.show ? "1" : "0")};
-
-    transition: opacity 0.1s ease-in;
+  picture {
+    animation: 0.2s ${fadeIn} ease-in;
   }
 
-  .gatsby-image-wrapper:first-of-type {
-    transform: translateX(1px);
-  }
-
-  .gatsby-image-wrapper:last-of-type {
+  picture:last-of-type {
     z-index: -1;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 
 export default function ElasticF() {
-  const [leftImgLoaded, setLeftImgLoaded] = useState(false);
-  const [rightImgLoaded, setRightImgLoaded] = useState(false);
-  const data = useStaticQuery(query);
-  const jumpingDudeLeft = data.left.childImageSharp.fluid;
-  const jumpingDudeRight = data.right.childImageSharp.fluid;
-
-  function onLoadLeft() {
-    setLeftImgLoaded(true);
-  }
-
-  function onLoadRight() {
-    setRightImgLoaded(true);
-  }
-
   return (
     <div aria-label="Finiam's animated logo">
-      <ElasticFContainer aria-hidden="true">
+      <ElasticFContainer
+        aria-hidden="true"
+        aria-label="A man jumping over Finiam's logo"
+      >
         <StaticF />
 
         <JumpingDudeContainer>
           <StyledCircles />
-          <ImageContainer show={leftImgLoaded && rightImgLoaded}>
-            <Img fluid={jumpingDudeLeft} fadeIn={false} onLoad={onLoadLeft} />
-            <Img fluid={jumpingDudeRight} fadeIn={false} onLoad={onLoadRight} />
+
+          <ImageContainer>
+            <Img
+              src={jumpingDudeLeft}
+              sizes={[125]}
+              loading="eager"
+              alt="A man jumping"
+              webp
+            />
+            <Img
+              src={jumpingDudeRight}
+              sizes={[125]}
+              loading="eager"
+              alt="A man jumping"
+              webp
+            />
           </ImageContainer>
         </JumpingDudeContainer>
       </ElasticFContainer>

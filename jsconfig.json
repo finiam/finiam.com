@@ -5,6 +5,9 @@
       "root/*": [
         "src/*"
       ],
+      "cms/*": [
+        "data/*"
+      ],
     }
   },
   "exclude": [

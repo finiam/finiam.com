@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import useSiteMetadata from "../hooks/useSiteMetadata";
-import favicon from "../assets/favicon.svg";
+import Head from "next/head";
+import siteMetadata from "cms/siteMetadata.json";
+import favicon from "root/assets/favicon.svg";
 
 function SEO({ title, description, keywords }) {
   const {
     title: siteTitle,
     description: siteDescription,
     keywords: siteKeywords,
-  } = useSiteMetadata();
+  } = siteMetadata;
 
   return (
-    <Helmet>
+    <Head>
       <title>{title || siteTitle}</title>
       <meta name="description" content={description || siteDescription} />
       <meta name="keywords" content={keywords || siteKeywords} />
@@ -24,7 +24,7 @@ function SEO({ title, description, keywords }) {
       />
       <meta property="og:image" content="logo.png" />
       <link rel="icon" href={favicon} type="image/svg+xml" />
-    </Helmet>
+    </Head>
   );
 }
 

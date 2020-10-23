@@ -1,24 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Img from "gatsby-image/withIEPolyfill";
-import { useStaticQuery, graphql } from "gatsby";
 
+import jumpingDude from "root/assets/images/jumping-dude.png";
 import { columnsToPx, spacing } from "root/styleutils/settings";
 import Text from "root/components/Text";
 import ElasticF from "./ElasticF";
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "jumping-dude.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-  }
-`;
 
 const Root = styled.div`
   position: relative;
@@ -72,8 +59,6 @@ export default function TheBanner() {
   const shouldAnimate =
     typeof window !== "undefined" &&
     window.sessionStorage.getItem("shouldAnimate") !== "false";
-  const data = useStaticQuery(query);
-  const jumpingDude = data.file.childImageSharp.fluid;
 
   useEffect(() => {
     setTimeout(
@@ -86,7 +71,7 @@ export default function TheBanner() {
     if (!shouldAnimate) {
       return (
         <JumpindDudeWithoutMotion>
-          <Img fluid={jumpingDude} />
+          <img src={jumpingDude} alt="A man jumping" />
         </JumpindDudeWithoutMotion>
       );
     }
@@ -101,7 +86,7 @@ export default function TheBanner() {
           ease: "linear",
         }}
       >
-        <Img fluid={jumpingDude} />
+        <img src={jumpingDude} alt="A man jumping" />
       </JumpingDude>
     );
   }

@@ -1,10 +1,12 @@
 import React from "react";
-import Img from "gatsby-image/withIEPolyfill";
 import styled from "styled-components";
+import Img from "react-optimized-image";
 import mediaQueries from "root/styleutils/mediaQueries";
 import { columnsToPx, spacing } from "root/styleutils/settings";
-
-import useImages from "./useImages";
+import image1 from "root/assets/home-whatwedo-1.jpeg";
+import image2 from "root/assets/home-whatwedo-2.jpeg";
+import image3 from "root/assets/home-whatwedo-3.jpeg";
+import image4 from "root/assets/home-whatwedo-4.jpeg";
 
 const GRID_SPACING = spacing(5);
 
@@ -17,6 +19,21 @@ const ImagesContainer = styled.div`
   width: 100%;
 
   transform: rotate(5deg) translateX(${columnsToPx(4)});
+
+  picture {
+    background-color: grey;
+  }
+
+  picture > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+
+    color: transparent;
+  }
 
   ${mediaQueries.tablet} {
     grid-template-columns: repeat(2, 1fr);
@@ -120,19 +137,41 @@ const Img4 = styled.div`
 `;
 
 export default function ImageGrid() {
-  const images = useImages();
-
   return (
     <ImagesContainer>
       <ImgRow>
-        <Img fluid={images.img1.childImageSharp.fluid} />
-        <Img fluid={images.img2.childImageSharp.fluid} />
+        <Img
+          src={image1}
+          alt="TODO: Update this alt when img is final"
+          sizes={[200]}
+          webp
+          loading="lazy"
+        />
+        <Img
+          src={image2}
+          alt="TODO: Update this alt when img is final"
+          sizes={[300]}
+          webp
+          loading="lazy"
+        />
       </ImgRow>
       <Img3>
-        <Img fluid={images.img3.childImageSharp.fluid} />
+        <Img
+          src={image3}
+          alt="TODO: Update this alt when img is final"
+          sizes={[300]}
+          webp
+          loading="lazy"
+        />
       </Img3>
       <Img4>
-        <Img fluid={images.img4.childImageSharp.fluid} />
+        <Img
+          src={image4}
+          alt="TODO: Update this alt when img is final"
+          sizes={[500]}
+          webp
+          loading="lazy"
+        />
       </Img4>
     </ImagesContainer>
   );

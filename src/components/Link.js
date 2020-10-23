@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import GatsbyLink from "gatsby-link";
+import NextLink from "next/link";
 
-const Root = styled(GatsbyLink)`
+const StyledNextLink = styled(NextLink)`
   display: inline;
 
   text-decoration: none;
@@ -15,23 +15,21 @@ const Root = styled(GatsbyLink)`
   }
 `;
 
+const RegularLink = StyledNextLink.withComponent("a");
+
 export default function Link({ href, to, underline, children, ...props }) {
-  let Component = Root;
-
   if (href) {
-    Component = Root.withComponent("a");
-
     return (
-      <Component {...{ ...props, href, underline: underline ? 1 : 0 }}>
+      <RegularLink {...{ ...props, href, underline: underline ? 1 : 0 }}>
         {children}
-      </Component>
+      </RegularLink>
     );
   }
 
   return (
-    <Component {...{ ...props, to, underline: underline ? 1 : 0 }}>
-      {children}
-    </Component>
+    <StyledNextLink {...{ ...props, href: to, underline: underline ? 1 : 0 }}>
+      <a href={to}>{children}</a>
+    </StyledNextLink>
   );
 }
 

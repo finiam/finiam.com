@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+
 import { spacing, columnsToPx } from "root/styleutils/settings";
 import WidthLimiter from "root/components/WidthLimiter";
 import Text from "root/components/Text";
 import Flexbox from "root/components/Flexbox";
-import Crediflux from "root/assets/crediflux.inline.svg";
-import Utrust from "root/assets/utrust.inline.svg";
-import BetProtocol from "root/assets/betprotocol.inline.svg";
+import Crediflux from "root/assets/crediflux.inline.svg?include";
+import Utrust from "root/assets/utrust.inline.svg?include";
+import BetProtocol from "root/assets/betprotocol.inline.svg?include";
 import colors from "root/styleutils/colors";
 import Button from "root/components/Button";
 import mediaQueries from "root/styleutils/mediaQueries";
@@ -65,7 +66,7 @@ const LastCopyBlock = styled(CopyBlock)`
 
 export default function HomePartners() {
   return (
-    <Root>
+    <Root id="partners">
       <WidthLimiter>
         <CopyBlock>
           <Text size="h2" color={colors.brand} weight="lighter">
