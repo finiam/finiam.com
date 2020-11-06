@@ -97,13 +97,17 @@ const SocialLinks = styled.ul`
   flex-direction: row;
 
   ${mediaQueries.mobile} {
-    & > p {
-      padding: 12px;
-    }
+    flex-wrap: wrap;
+
+    margin-left: -12px;
   }
 `;
 
 const SocialLink = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   a {
     display: block;
 
@@ -113,10 +117,6 @@ const SocialLink = styled.li`
   ${mediaQueries.mobile} {
     a {
       padding: 12px;
-    }
-
-    &:first-child a {
-      margin-left: -12px;
     }
   }
 `;
@@ -182,13 +182,13 @@ export default function Footer() {
                   >
                     <Text weight="lighter">{socialLink.name}</Text>
                   </a>
-                </SocialLink>
 
-                {index === SOCIAL_LINKS.length - 1 ? (
-                  ""
-                ) : (
-                  <Text weight="lighter">&nbsp;/&nbsp;</Text>
-                )}
+                  {index === SOCIAL_LINKS.length - 1 ? (
+                    ""
+                  ) : (
+                    <Text weight="lighter">&nbsp;/&nbsp;</Text>
+                  )}
+                </SocialLink>
               </>
             ))}
           </SocialLinks>
