@@ -96,8 +96,28 @@ const SocialLinks = styled.ul`
   display: flex;
   flex-direction: row;
 
+  ${mediaQueries.mobile} {
+    flex-wrap: wrap;
+
+    margin-left: -12px;
+  }
+`;
+
+const SocialLink = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   a {
+    display: block;
+
     text-decoration: none;
+  }
+
+  ${mediaQueries.mobile} {
+    a {
+      padding: 12px;
+    }
   }
 `;
 
@@ -152,21 +172,24 @@ export default function Footer() {
 
           <SocialLinks>
             {SOCIAL_LINKS.map((socialLink, index) => (
-              <li key={socialLink.key}>
-                <a
-                  href={socialLink.href}
-                  aria-label={socialLink["aria-label"]}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <Text weight="lighter">
-                    {socialLink.name}
-                    &nbsp;
-                    {index === SOCIAL_LINKS.length - 1 ? "" : "/"}
-                    &nbsp;
-                  </Text>
-                </a>
-              </li>
+              <>
+                <SocialLink key={socialLink.key}>
+                  <a
+                    href={socialLink.href}
+                    aria-label={socialLink["aria-label"]}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <Text weight="lighter">{socialLink.name}</Text>
+                  </a>
+
+                  {index === SOCIAL_LINKS.length - 1 ? (
+                    ""
+                  ) : (
+                    <Text weight="lighter">&nbsp;/&nbsp;</Text>
+                  )}
+                </SocialLink>
+              </>
             ))}
           </SocialLinks>
         </FollowUs>
