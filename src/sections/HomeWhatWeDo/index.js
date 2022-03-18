@@ -53,10 +53,13 @@ export default function HomeWhatWeDo() {
 
           <Services direction="column" gap={spacing(1)}>
             <Text color={colors.black} size="h3" as="p">
-              → Development
+              → Web Development
             </Text>
             <Text color={colors.black} size="h3" as="p">
-              → Design
+              → Smart contract development
+            </Text>
+            <Text color={colors.black} size="h3" as="p">
+              → DevOps
             </Text>
             <Text color={colors.black} size="h3" as="p">
               → Product development

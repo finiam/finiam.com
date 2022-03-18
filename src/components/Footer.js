@@ -20,33 +20,10 @@ const SOCIAL_LINKS = [
     href: "https://www.linkedin.com/company/finiam",
   },
   {
-    key: "medium",
-    "aria-label": "Medium",
-    name: "Md",
-    href: "https://medium.com/finiam",
-  },
-  {
     key: "twi",
     "aria-label": "Twitter",
     name: "Tw",
     href: "https://twitter.com/wearefiniam",
-  },
-  {
-    key: "git",
-    "aria-label": "Github",
-    name: "Git",
-    href: "https://github.com/finiam",
-  },
-  {
-    key: "ins",
-    "aria-label": "Instagram",
-    name: "Ins",
-    href: "https://www.instagram.com/wearefiniam/",
-  },
-  {
-    key: "fb",
-    name: "Fb",
-    href: "https://www.facebook.com/wearefiniam",
   },
 ];
 
@@ -138,7 +115,7 @@ export default function Footer() {
 
           <AddressBlock>
             <Text color={colors.green} weight="lighter">
-              Braga, Portugal
+              Headquarters
             </Text>
 
             <Link
@@ -146,22 +123,16 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Text weight="lighter">Get directions</Text>
+              <Text weight="lighter">Braga, Portugal</Text>
             </Link>
           </AddressBlock>
 
           <AddressBlock>
             <Text color={colors.green} weight="lighter">
-              Boston, USA
+              Remote
             </Text>
 
-            <Link
-              href="https://goo.gl/maps/U97F3EfaR9kjCjpN6"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Text weight="lighter">Get directions</Text>
-            </Link>
+            <Text weight="lighter">Globally</Text>
           </AddressBlock>
         </Addresses>
 

@@ -7,6 +7,7 @@ import Flexbox from "root/components/Flexbox";
 import Crediflux from "root/assets/crediflux.inline.svg";
 import Utrust from "root/assets/utrust.inline.svg";
 import BetProtocol from "root/assets/betprotocol.inline.svg";
+import Protocol from "root/assets/protocol.inline.svg";
 import colors from "root/styleutils/colors";
 import Button from "root/components/Button";
 import mediaQueries from "root/styleutils/mediaQueries";
