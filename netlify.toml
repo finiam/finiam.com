@@ -1,5 +1,5 @@
 [build]
-  command = "pip install fonttools brotli zopfli && yarn build"
+  command = "yarn build"
   publish = "public"
 
 [[plugins]]
